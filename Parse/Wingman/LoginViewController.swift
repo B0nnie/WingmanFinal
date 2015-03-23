@@ -41,11 +41,17 @@ class LoginViewController: UIViewController {
         self.logoImageView.layer.cornerRadius = 50
          self.logoImageView.clipsToBounds = true
         
-//        
-//        springWithDelay(0.5, 0.05, {
-//            self.logoImageView.transform = CGAffineTransformMakeTranslation(0, 0)
-//        })
-//        
+        
+        let scale = CGAffineTransformMakeScale(0.5, 0.5)
+        let translate = CGAffineTransformMakeTranslation(0, 500)
+        self.logoImageView.transform = CGAffineTransformConcat(scale, translate)
+        
+        animationWithDuration(4) {
+            let scale = CGAffineTransformMakeScale(1, 1)
+            let translate = CGAffineTransformMakeTranslation(0, 0)
+            self.logoImageView.transform = CGAffineTransformConcat(scale, translate)
+        }
+
 
         if PFUser.currentUser() != nil {
             
