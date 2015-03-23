@@ -23,9 +23,36 @@ class BrowseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadCurrentUserAndThenLoadUsers()
+   
         
+        
+//        
+//        let gradientView = GradientView(frame: CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height))
+//        
+//        // Set the gradient colors
+//        
+//    
+//        gradientView.colors = [UIColor.blackColor(), UIColor.whiteColor()]
+//        
+//        // Optionally set some locations
+//     //   gradientView.locations = [0.0, 1.0]
+//        
+//        // Optionally change the direction. The default is vertical.
+//        gradientView.direction = .Vertical
+//        
+//        
+//        // Add some borders too if you want
+//        
+//        /*
+//        gradientView.topBorderColor = UIColor.redColor()
+//        gradientView.bottomBorderColor = UIColor.blueColor()
+//
+//*/
+//        
+//        // Add it as a subview in all of its awesome
+//        view.addSubview(gradientView)
     
+             self.loadCurrentUserAndThenLoadUsers()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -221,29 +248,12 @@ class BrowseTableViewController: UITableViewController {
             
         }
         
-        cell.selectionStyle = .None
-        
-        let item = arrayOfPostData[indexPath.row]
-        
-        cell.textLabel?.backgroundColor = UIColor.clearColor()
+      
         return cell
         
     }
     
-    
-    func colorForIndex(index: Int) -> UIColor {
-        let itemCount = arrayOfRegisterInfo.count - 1
-        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
-        return UIColor(red: 1.0, green: val, blue: 0.0, alpha: 1.0)
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            cell.backgroundColor = colorForIndex(indexPath.row)
-    }
 
-    
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //       let cell: BrowseTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as BrowseTableViewCell
 
