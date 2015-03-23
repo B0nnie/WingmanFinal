@@ -33,11 +33,15 @@
 		29775DCB1AA4FD6E00A56925 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */; };
 		29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */; };
 		29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775E321AA7F27F00A56925 /* PostViewController.swift */; };
-		2980CDAA1AC063E1005A4A7D /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDA81AC063E1005A4A7D /* Spring */; };
 		2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */; };
 		2980CDAD1AC06818005A4A7D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDAC1AC06818005A4A7D /* Icon.png */; };
 		29A075981ABB711E00204989 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A075971ABB711E00204989 /* PickerViewController.swift */; };
 		29E637801AC059BB009B5241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E6377F1AC059BB009B5241 /* Images.xcassets */; };
+		BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */; };
+		BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC21AC0ABBF009FC1F0 /* Data.swift */; };
+		BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */; };
+		BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC41AC0ABBF009FC1F0 /* Misc.swift */; };
+		BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */; };
 		BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */; };
 		BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD53079E1AA9702200D8DBBB /* defaultimage.jpg */; };
 		BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */; };
@@ -85,11 +89,15 @@
 		29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Wingman/RegisterViewController.swift; sourceTree = "<group>"; };
 		29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewController.swift; path = Wingman/BrowseTableViewController.swift; sourceTree = "<group>"; };
 		29775E321AA7F27F00A56925 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = Wingman/PostViewController.swift; sourceTree = "<group>"; };
-		2980CDA81AC063E1005A4A7D /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Spring; path = Wingman/Spring; sourceTree = "<group>"; };
 		2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
 		2980CDAC1AC06818005A4A7D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		29A075971ABB711E00204989 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		29E6377F1AC059BB009B5241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		BD080DC21AC0ABBF009FC1F0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		BD080DC41AC0ABBF009FC1F0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewCell.swift; path = Wingman/BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BD53079E1AA9702200D8DBBB /* defaultimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = defaultimage.jpg; path = Wingman/defaultimage.jpg; sourceTree = "<group>"; };
 		BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseDetailViewController.swift; path = Wingman/BrowseDetailViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +225,7 @@
 		29FD51561AB4CA1100A0D7DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2980CDA81AC063E1005A4A7D /* Spring */,
+				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
 				29775E321AA7F27F00A56925 /* PostViewController.swift */,
@@ -227,6 +235,18 @@
 				29A075971ABB711E00204989 /* PickerViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD080DCB1AC0ABD4009FC1F0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */,
+				BD080DC21AC0ABBF009FC1F0 /* Data.swift */,
+				BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */,
+				BD080DC41AC0ABBF009FC1F0 /* Misc.swift */,
+				BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 		BD5307A01AA9702700D8DBBB /* Images */ = {
@@ -321,7 +341,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2980CDAA1AC063E1005A4A7D /* Spring in Resources */,
 				29775D3C1AA3D45800A56925 /* Main.storyboard in Resources */,
 				2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */,
 				29E637801AC059BB009B5241 /* Images.xcassets in Resources */,
@@ -348,11 +367,16 @@
 				29775DCB1AA4FD6E00A56925 /* RegisterViewController.swift in Sources */,
 				29775D391AA3D45800A56925 /* LoginViewController.swift in Sources */,
 				29775D371AA3D45800A56925 /* AppDelegate.swift in Sources */,
+				BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */,
 				293044EE1AAF619400A793FC /* ClubOrBarVenues.swift in Sources */,
+				BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */,
 				29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */,
 				29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */,
+				BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */,
 				29A075981ABB711E00204989 /* PickerViewController.swift in Sources */,
 				293044EC1AAF569600A793FC /* FourSquareAPI.swift in Sources */,
+				BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */,
+				BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */,
 				BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */,
 				BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */,
 			);
