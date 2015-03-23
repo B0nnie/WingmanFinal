@@ -179,10 +179,6 @@ class BrowseTableViewController: UITableViewController {
         }
         
         
-//        if let interest = registerInfo["interests"] as? String {
-//            cell.interestsLabel.text = interest
-//        }
-        
         if let username = registerInfo["username"] as? String {
             cell.usernameLabel.text = username
         }
@@ -201,12 +197,6 @@ class BrowseTableViewController: UITableViewController {
             
             
         }
-        
-//        if let seeking = postData["wingmanGender"] as? String {
-//            
-//            cell.seekingLabel.text = "Seeking: \(seeking)"
-//            
-//        }
     
         
         if let startTimeInt = postData["startTime"] as? Int {
@@ -221,27 +211,10 @@ class BrowseTableViewController: UITableViewController {
             
         }
         
-        cell.selectionStyle = .None
         
-        let item = arrayOfPostData[indexPath.row]
-        
-        cell.textLabel?.backgroundColor = UIColor.clearColor()
         return cell
         
     }
-    
-    
-    func colorForIndex(index: Int) -> UIColor {
-        let itemCount = arrayOfRegisterInfo.count - 1
-        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
-        return UIColor(red: 1.0, green: val, blue: 0.0, alpha: 1.0)
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            cell.backgroundColor = colorForIndex(indexPath.row)
-    }
-
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
