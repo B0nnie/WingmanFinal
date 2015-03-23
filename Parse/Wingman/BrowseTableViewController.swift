@@ -23,9 +23,36 @@ class BrowseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadCurrentUserAndThenLoadUsers()
+   
         
+        
+//        
+//        let gradientView = GradientView(frame: CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height))
+//        
+//        // Set the gradient colors
+//        
+//    
+//        gradientView.colors = [UIColor.blackColor(), UIColor.whiteColor()]
+//        
+//        // Optionally set some locations
+//     //   gradientView.locations = [0.0, 1.0]
+//        
+//        // Optionally change the direction. The default is vertical.
+//        gradientView.direction = .Vertical
+//        
+//        
+//        // Add some borders too if you want
+//        
+//        /*
+//        gradientView.topBorderColor = UIColor.redColor()
+//        gradientView.bottomBorderColor = UIColor.blueColor()
+//
+//*/
+//        
+//        // Add it as a subview in all of its awesome
+//        view.addSubview(gradientView)
     
+             self.loadCurrentUserAndThenLoadUsers()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -211,12 +238,11 @@ class BrowseTableViewController: UITableViewController {
             
         }
         
-        
         return cell
         
     }
     
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //       let cell: BrowseTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as BrowseTableViewCell
 

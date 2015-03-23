@@ -13,7 +13,7 @@ class BrowseTableViewCell: UITableViewCell {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
 
-    
+
 //    @IBOutlet weak var seekingLabel: UILabel!
     
     @IBOutlet weak var userImage: UIImageView!

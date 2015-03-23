@@ -42,6 +42,7 @@
 		BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */; };
 		BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC41AC0ABBF009FC1F0 /* Misc.swift */; };
 		BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */; };
+		BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */; };
 		BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */; };
 		BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD53079E1AA9702200D8DBBB /* defaultimage.jpg */; };
 		BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */; };
@@ -98,6 +99,7 @@
 		BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BD080DC41AC0ABBF009FC1F0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewCell.swift; path = Wingman/BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BD53079E1AA9702200D8DBBB /* defaultimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = defaultimage.jpg; path = Wingman/defaultimage.jpg; sourceTree = "<group>"; };
 		BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseDetailViewController.swift; path = Wingman/BrowseDetailViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		BD080DCB1AC0ABD4009FC1F0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */,
 				BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */,
 				BD080DC21AC0ABBF009FC1F0 /* Data.swift */,
 				BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */,
@@ -370,6 +373,7 @@
 				BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */,
 				293044EE1AAF619400A793FC /* ClubOrBarVenues.swift in Sources */,
 				BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */,
+				BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */,
 				29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */,
 				29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */,
 				BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */,
