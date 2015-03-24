@@ -930,8 +930,8 @@
                                     <action selector="submitPostButton:" destination="gdR-Hc-qHQ" eventType="touchUpInside" id="NE3-fA-7tJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUt-A0-PPc">
-                                <rect key="frame" x="203" y="84" width="194" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUt-A0-PPc">
+                                <rect key="frame" x="180.5" y="84" width="239" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="41"/>
                                 <state key="normal" title="Choose club or bar">
@@ -1004,6 +1004,7 @@
                             <mask key="constraints">
                                 <exclude reference="HFE-mC-jvZ"/>
                                 <exclude reference="g48-Ki-c9v"/>
+                                <exclude reference="Fc9-jR-m1i"/>
                                 <exclude reference="vzJ-aq-4VW"/>
                                 <exclude reference="RTz-V5-xSN"/>
                                 <exclude reference="0VH-Kw-LCh"/>
