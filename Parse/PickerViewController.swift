@@ -28,6 +28,8 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
 
     var delegate: PostViewController?
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     @IBAction func backButton(sender: AnyObject) {
         
         self.presentingViewController?.tabBarController?.tabBar.hidden = false
@@ -51,6 +53,9 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.imageView.hidden = true
+        backButton.alpha = 0
 
          self.navigationController?.setNavigationBarHidden(false, animated: true)
         
@@ -72,8 +77,27 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, 200)
+        self.imageView.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        spring(1) {
+            
+            self.imageView.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.imageView.transform = CGAffineTransformConcat(scale, translate)
+        }
+
+        
+        backButton.alpha = 1
+        springScaleFrom(backButton!, -100, 0, 0.5, 0.5)
+        
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
+    
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         self.tabBarController?.tabBar.hidden = true

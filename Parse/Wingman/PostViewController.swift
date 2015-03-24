@@ -29,6 +29,17 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     
     @IBOutlet weak var phoneNumber: UITextField!
     
+    @IBOutlet weak var backgroundMaskView: UIView!
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var chooseBarButton: UIButton!
+    
+    @IBOutlet weak var postButton: UIButton!
+    
+    @IBOutlet weak var postImageView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.hidden = false
@@ -37,6 +48,9 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
 //        pickerClubBar.dataSource = self
 //        pickerClubBar.delegate = self
 //        pickerClubBar.backgroundColor = UIColor.clearColor()
+        
+     
+    //   insertBlurView(backgroundMaskView, UIBlurEffectStyle.Dark)
         
         
         postData["wingmanGender"] = "female"
@@ -59,6 +73,13 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
+        
+        self.postButton.hidden = true
+        self.chooseBarButton.hidden = true
+        
+        self.postImageView.hidden = true
+        
+        self.imageView.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -70,6 +91,44 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         self.tabBarController?.tabBar.hidden = false
         //"You chose: " label stuff here
         //venueChoiceLabel.text = "You chose: \()"
+        
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, -100)
+        self.chooseBarButton.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        spring(1) {
+            
+            self.chooseBarButton.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.chooseBarButton.transform = CGAffineTransformConcat(scale, translate)
+        }
+        
+        // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(0, 100)
+        self.postButton.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        self.postImageView.transform = CGAffineTransformConcat(scale2, translate2)
+        self.imageView.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            self.postButton.hidden = false
+            self.postImageView.hidden = false
+            self.imageView.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.postButton.transform = CGAffineTransformConcat(scale, translate)
+            self.postImageView.transform = CGAffineTransformConcat(scale, translate)
+            self.imageView.transform = CGAffineTransformConcat(scale, translate)
+            
+            
+        }
+        
+ 
+
         
     }
     
@@ -223,10 +282,13 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         var venueName = venue.name
         
     
-        venueChoiceLabel.text = "You chose:\n\(venueName)"
+       self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
       
+
         
     }
+    
+    
 
     
     /*

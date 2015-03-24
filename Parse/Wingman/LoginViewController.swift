@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     var gravityBehavior: UIGravityBehavior!
     var snapBehavior: UISnapBehavior!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,7 @@ class LoginViewController: UIViewController {
         //hides navigation bar on LoginVC
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //sets navigation bar to a clear black color
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -37,21 +40,60 @@ class LoginViewController: UIViewController {
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        self.logoImageView.hidden = true
+        self.loginButton.hidden = true
+        self.signInButton.hidden = true
+    }
     override func viewDidAppear(animated: Bool) {
         self.logoImageView.layer.cornerRadius = 50
          self.logoImageView.clipsToBounds = true
         
         
-        let scale = CGAffineTransformMakeScale(0.5, 0.5)
-        let translate = CGAffineTransformMakeTranslation(0, 500)
-        self.logoImageView.transform = CGAffineTransformConcat(scale, translate)
+       
+        
+        
+        // animate the logoImageView
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, 500)
+        self.logoImageView.transform = CGAffineTransformConcat(scale1, translate1)
         
         animationWithDuration(4) {
-            let scale = CGAffineTransformMakeScale(1, 1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
+             self.logoImageView.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
             self.logoImageView.transform = CGAffineTransformConcat(scale, translate)
         }
 
+         // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(-300, 0)
+        self.loginButton.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.loginButton.transform = CGAffineTransformConcat(scale, translate)
+            self.loginButton.hidden = false
+
+        }
+        
+        var scale3 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate3 = CGAffineTransformMakeTranslation(300, 0)
+        self.signInButton.transform = CGAffineTransformConcat(scale3, translate3)
+        
+        spring(1) {
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.signInButton.transform = CGAffineTransformConcat(scale, translate)
+            self.signInButton.hidden = false
+
+        }
+
+
+        
 
         if PFUser.currentUser() != nil {
             
@@ -69,7 +111,7 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
         
         
@@ -78,6 +120,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
 
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var signInButton: UIButton!
+    
     
     @IBAction func loginButton(sender: AnyObject) {
         

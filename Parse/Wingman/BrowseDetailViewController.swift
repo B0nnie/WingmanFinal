@@ -58,6 +58,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
         
         println(self.phoneNumber)
         fillLabels()
@@ -70,6 +71,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     
     override func viewDidAppear(animated:Bool){
         
+      //  self.navigationController?.navigationItem.backBarButtonItem =
         
         startUpdatingLocation()
         

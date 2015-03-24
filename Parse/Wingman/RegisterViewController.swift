@@ -21,8 +21,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var registerInfo = [String:AnyObject]()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        pickProfilePicButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlState.Highlighted)
+//        
+    
+    
         
         self.registerInfo["gender"] = "male"
         
@@ -32,7 +39,86 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.createUsernameField.hidden = true
+        self.createPasswordField.hidden = true
+        self.enterEmailField.hidden = true
+        
+        self.pickedImage.hidden = true
+        
+        
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        
+        
+        // animate the logoImageView
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, -100)
+        self.createUsernameField.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        spring(1) {
+     
+            self.createUsernameField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.createUsernameField.transform = CGAffineTransformConcat(scale, translate)
+        }
+        
+        // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(0, -100)
+        self.enterEmailField.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            self.enterEmailField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.enterEmailField.transform = CGAffineTransformConcat(scale, translate)
+       
+            
+        }
+        
+        var scale3 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate3 = CGAffineTransformMakeTranslation(0, -100)
+        self.createPasswordField.transform = CGAffineTransformConcat(scale3, translate3)
+        
+        spring(1) {
+            self.createPasswordField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.createPasswordField.transform = CGAffineTransformConcat(scale, translate)
+       
+            
+        }
+
+        
+        var scale4 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate4 = CGAffineTransformMakeTranslation(0, 200)
+        self.pickedImage.transform = CGAffineTransformConcat(scale4, translate4)
+        
+        spring(1) {
+            self.pickedImage.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.pickedImage.transform = CGAffineTransformConcat(scale, translate)
+            
+            
+        }
+        
+        if pickProfilePicButton.highlighted == true {
+            pickProfilePicButton.backgroundColor = UIColor.blueColor()
+            
+        }
+            
+        if pickProfilePicButton.highlighted == false{
+            pickProfilePicButton.backgroundColor = UIColor.clearColor()
+        }
+
+        
         if PFUser.currentUser() != nil {
             
             
@@ -66,6 +152,17 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
+    
+    func buttonClicked(sender:UIButton)
+    {
+        if sender.highlighted {
+            sender.backgroundColor = UIColor.blueColor()
+  
+        }
+    }
+
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -182,6 +279,10 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var enterEmailField: UITextField!
     
     @IBOutlet weak var createPasswordField: UITextField!
+    
+    @IBOutlet weak var pickProfilePicButton: UIButton!
+    
+    
     
     @IBAction func genderSC(sender: UISegmentedControl) {
         

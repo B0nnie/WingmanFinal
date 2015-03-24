@@ -43,6 +43,14 @@
 		BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC41AC0ABBF009FC1F0 /* Misc.swift */; };
 		BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */; };
 		BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */; };
+		BD080DD01AC1AB0F009FC1F0 /* club-scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */; };
+		BD080DD21AC1AD6E009FC1F0 /* Club.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD11AC1AD6E009FC1F0 /* Club.jpg */; };
+		BD080DD51AC1D229009FC1F0 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD31AC1D229009FC1F0 /* backbutton.png */; };
+		BD080DD61AC1D229009FC1F0 /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */; };
+		BD080DD81AC1EE66009FC1F0 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */; };
+		BD080DDA1AC1FE33009FC1F0 /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD91AC1FE33009FC1F0 /* pushpin.png */; };
+		BD080DDC1AC1FE73009FC1F0 /* glass.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DDB1AC1FE73009FC1F0 /* glass.png */; };
+		BD080DDE1AC2021E009FC1F0 /* miso-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD080DDD1AC20219009FC1F0 /* miso-regular.otf */; };
 		BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */; };
 		BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD53079E1AA9702200D8DBBB /* defaultimage.jpg */; };
 		BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */; };
@@ -100,6 +108,14 @@
 		BD080DC41AC0ABBF009FC1F0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "club-scene.jpg"; sourceTree = "<group>"; };
+		BD080DD11AC1AD6E009FC1F0 /* Club.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Club.jpg; sourceTree = "<group>"; };
+		BD080DD31AC1D229009FC1F0 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@2x.png"; sourceTree = "<group>"; };
+		BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		BD080DD91AC1FE33009FC1F0 /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		BD080DDB1AC1FE73009FC1F0 /* glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass.png; sourceTree = "<group>"; };
+		BD080DDD1AC20219009FC1F0 /* miso-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-regular.otf"; sourceTree = "<group>"; };
 		BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewCell.swift; path = Wingman/BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BD53079E1AA9702200D8DBBB /* defaultimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = defaultimage.jpg; path = Wingman/defaultimage.jpg; sourceTree = "<group>"; };
 		BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseDetailViewController.swift; path = Wingman/BrowseDetailViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +246,7 @@
 				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
+				BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */,
 				29775E321AA7F27F00A56925 /* PostViewController.swift */,
 				29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */,
 				BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */,
@@ -255,7 +272,14 @@
 		BD5307A01AA9702700D8DBBB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BD080DDB1AC1FE73009FC1F0 /* glass.png */,
+				BD080DDD1AC20219009FC1F0 /* miso-regular.otf */,
+				BD080DD91AC1FE33009FC1F0 /* pushpin.png */,
+				BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */,
+				BD080DD31AC1D229009FC1F0 /* backbutton.png */,
+				BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */,
 				BD53079E1AA9702200D8DBBB /* defaultimage.jpg */,
+				BD080DD11AC1AD6E009FC1F0 /* Club.jpg */,
 				2980CDAC1AC06818005A4A7D /* Icon.png */,
 				29E6377F1AC059BB009B5241 /* Images.xcassets */,
 			);
@@ -344,12 +368,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD080DDE1AC2021E009FC1F0 /* miso-regular.otf in Resources */,
 				29775D3C1AA3D45800A56925 /* Main.storyboard in Resources */,
+				BD080DD61AC1D229009FC1F0 /* backbutton@2x.png in Resources */,
 				2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */,
+				BD080DD01AC1AB0F009FC1F0 /* club-scene.jpg in Resources */,
 				29E637801AC059BB009B5241 /* Images.xcassets in Resources */,
 				29775D411AA3D45800A56925 /* LaunchScreen.xib in Resources */,
+				BD080DDC1AC1FE73009FC1F0 /* glass.png in Resources */,
+				BD080DD21AC1AD6E009FC1F0 /* Club.jpg in Resources */,
+				BD080DD51AC1D229009FC1F0 /* backbutton.png in Resources */,
 				2980CDAD1AC06818005A4A7D /* Icon.png in Resources */,
 				BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */,
+				BD080DDA1AC1FE33009FC1F0 /* pushpin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +409,7 @@
 				29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */,
 				BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */,
 				29A075981ABB711E00204989 /* PickerViewController.swift in Sources */,
+				BD080DD81AC1EE66009FC1F0 /* RootNavigationController.swift in Sources */,
 				293044EC1AAF569600A793FC /* FourSquareAPI.swift in Sources */,
 				BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */,
 				BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */,

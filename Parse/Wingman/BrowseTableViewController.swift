@@ -23,34 +23,37 @@ class BrowseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   
+     
         
         
+        tableView.layoutMargins = UIEdgeInsetsZero
+        
+        tableView.separatorInset = UIEdgeInsetsZero
+
+        let gradientView = GradientView(frame: CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height))
+        
+        // Set the gradient colors
+        
+    
+        
+        
+        gradientView.colors = [UIColor.blackColor(), UIColor.grayColor()]
+        
+        // Optionally set some locations
+     //   gradientView.locations = [0.0, 1.0]
+        
+        // Optionally change the direction. The default is vertical.
+        gradientView.direction = .Vertical
+        
+        
+
 //        
-//        let gradientView = GradientView(frame: CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height))
-//        
-//        // Set the gradient colors
-//        
-//    
-//        gradientView.colors = [UIColor.blackColor(), UIColor.whiteColor()]
-//        
-//        // Optionally set some locations
-//     //   gradientView.locations = [0.0, 1.0]
-//        
-//        // Optionally change the direction. The default is vertical.
-//        gradientView.direction = .Vertical
-//        
-//        
-//        // Add some borders too if you want
-//        
-//        /*
-//        gradientView.topBorderColor = UIColor.redColor()
+//        gradientView.topBorderColor = UIColor.blueColor()
 //        gradientView.bottomBorderColor = UIColor.blueColor()
 //
-//*/
 //        
-//        // Add it as a subview in all of its awesome
-//        view.addSubview(gradientView)
+   
+        tableView.backgroundView = gradientView
     
              self.loadCurrentUserAndThenLoadUsers()
         
@@ -62,6 +65,22 @@ class BrowseTableViewController: UITableViewController {
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.backgroundColor = UIColor.blackColor()
+        
+        //sets navigation bar to a clear black color
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        //sets navigation bar's "Back" button item to white
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        var backButton = UIBarButtonItem()
+        var backButtonImage = UIImage(named: "backbutton")
+        backButton.setBackButtonBackgroundImage(backButtonImage, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+        
+        self.navigationController?.navigationItem.backBarButtonItem = backButton
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         self.tableView.backgroundColor = UIColor.blackColor()
@@ -71,6 +90,12 @@ class BrowseTableViewController: UITableViewController {
         
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        var backButton = UIBarButtonItem()
+        var backButtonImage = UIImage(named: "backbutton")
+        backButton.setBackButtonBackgroundImage(backButtonImage, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+     
+        self.navigationController?.navigationItem.backBarButtonItem = backButton
         
     }
     
@@ -182,12 +207,26 @@ class BrowseTableViewController: UITableViewController {
     }
 
     
+ 
+    
+    override func tableView(tableView: UITableView,
+        willDisplayCell cell: UITableViewCell,
+        forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        cell.separatorInset = UIEdgeInsetsZero
+         cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+       
+    }
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
 
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
 
         var registerInfo = self.arrayOfRegisterInfo[indexPath.row]
         
