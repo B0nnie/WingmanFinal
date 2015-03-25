@@ -69,6 +69,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         imageView!.hidden = true
         let image = UIImage(named: "bar")
+
         imageView!.image = image
         navigationItem.titleView = imageView
 
@@ -78,7 +79,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     override func viewWillAppear(animated: Bool) {
         
-        
+        self.imageView!.hidden = true
+
 
         self.createUsernameField.hidden = true
         self.createPasswordField.hidden = true
@@ -93,11 +95,12 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewDidAppear(animated: Bool) {
      
         customButton!.hidden = false
+         self.imageView!.hidden = false
          springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
  
   
 
-        imageView!.hidden = false
+
         springScaleFrom(imageView!, 200, 0, 0.5, 0.5)
        
         self.logoImageView.layer.cornerRadius = 50

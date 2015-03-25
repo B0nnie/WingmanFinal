@@ -66,15 +66,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="94N-rc-QWY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-PD-dYs">
-                                <rect key="frame" x="250" y="142" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-PD-dYs">
+                                <rect key="frame" x="250" y="140" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="62e-S0-VQh"/>
                                     <constraint firstAttribute="height" constant="100" id="O10-ie-lkg"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07s-wD-W1K">
-                                <rect key="frame" x="177" y="268" width="247" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07s-wD-W1K">
+                                <rect key="frame" x="177" y="266" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YZk-mw-aeT"/>
                                     <constraint firstAttribute="width" constant="247" id="nHz-Pq-qs7"/>
@@ -82,14 +82,14 @@
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wingmen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-nv-E6T">
-                                <rect key="frame" x="177" y="58" width="247" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wingmen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-nv-E6T">
+                                <rect key="frame" x="209.5" y="80" width="182" height="52"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-v4-yD5">
-                                <rect key="frame" x="155" y="491" width="290" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-v4-yD5">
+                                <rect key="frame" x="224.5" y="419" width="151" height="28"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="18"/>
                                 <state key="normal" title="No account yet? Click here">
                                     <color key="titleColor" red="0.58039215690000001" green="0.76078431369999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,8 +99,8 @@
                                     <segue destination="09s-7x-2LE" kind="show" id="Ywm-Vx-gtR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibs-2z-JKj">
-                                <rect key="frame" x="177" y="313" width="247" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibs-2z-JKj">
+                                <rect key="frame" x="177" y="311" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZY1-zD-VrZ"/>
                                     <constraint firstAttribute="width" constant="247" id="eX1-WT-o2Y"/>
@@ -108,8 +108,8 @@
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-rA-iSc">
-                                <rect key="frame" x="252" y="351" width="97" height="107"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-rA-iSc">
+                                <rect key="frame" x="276.5" y="349" width="48" height="37"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="28"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,7 +126,7 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="94N-rc-QWY" secondAttribute="bottom" id="2xF-MP-PpT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="94N-rc-QWY" secondAttribute="trailing" id="363-mZ-wwI"/>
                             <constraint firstAttribute="centerX" secondItem="VSo-rA-iSc" secondAttribute="centerX" id="585-Hf-fcK"/>
-                            <constraint firstItem="e7M-nv-E6T" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="58" id="9o3-EZ-nG9"/>
+                            <constraint firstItem="e7M-nv-E6T" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="80" id="9o3-EZ-nG9"/>
                             <constraint firstItem="Fve-v4-yD5" firstAttribute="top" secondItem="VSo-rA-iSc" secondAttribute="bottom" constant="33" id="A5L-wB-HeQ"/>
                             <constraint firstItem="07s-wD-W1K" firstAttribute="top" secondItem="Vnk-PD-dYs" secondAttribute="bottom" constant="26" id="CFs-Ka-p22"/>
                             <constraint firstItem="Vnk-PD-dYs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="H9U-DG-0zy"/>
@@ -439,15 +439,9 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-jP-ADx">
-                                            <rect key="frame" x="104" y="8" width="240" height="44"/>
-                                            <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClubOrBar" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ey-Ju-rMj">
                                             <rect key="frame" x="352" y="8" width="240" height="44"/>
-                                            <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -462,6 +456,13 @@
                                             <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-jP-ADx">
+                                            <rect key="frame" x="104" y="8" width="240" height="44"/>
+                                            <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="8" height="8"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -529,12 +530,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-bR-Uda">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afP-xS-0d2">
-                                <rect key="frame" x="110" y="20" width="100" height="28"/>
-                                <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ppu-vM-UJ4">
                                 <rect key="frame" x="100" y="66" width="120" height="120"/>
                                 <constraints>
@@ -671,6 +666,12 @@
                                     <action selector="logout:" destination="GkM-aB-zwl" eventType="touchUpInside" id="02R-MF-Xle"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afP-xS-0d2">
+                                <rect key="frame" x="110" y="20" width="100" height="28"/>
+                                <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -773,11 +774,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-yt-aHy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-yt-aHy">
+                                <rect key="frame" x="-1" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Club.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-He-ugq">
-                                <rect key="frame" x="0.0" y="395.5" width="600" height="220.5"/>
+                                <rect key="frame" x="0.0" y="377.5" width="600" height="238.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="RAh-62-Mv2"/>
                                     <constraint firstAttribute="width" constant="600" id="j5Y-po-MJ1"/>
@@ -792,7 +793,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fg-YM-i2p">
-                                <rect key="frame" x="0.0" y="395.5" width="600" height="220.5"/>
+                                <rect key="frame" x="0.0" y="377.5" width="600" height="238.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="WHE-KM-M3K"/>
@@ -804,14 +805,14 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="I'd like my Wingman to be: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nct-HV-NOg">
-                                <rect key="frame" x="206" y="167" width="188.5" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I'd like my Wingman to be: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nct-HV-NOg">
+                                <rect key="frame" x="222" y="164" width="156" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="We're gonna hang out " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys0-2k-eKz">
-                                <rect key="frame" x="225" y="258" width="150" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="We're gonna hang out " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys0-2k-eKz">
+                                <rect key="frame" x="236" y="247.5" width="128.5" height="15.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="3Tm-ua-SDb"/>
                                 </constraints>
@@ -825,15 +826,15 @@
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8z-Fy-iY7">
-                                <rect key="frame" x="226" y="340.5" width="148" height="30"/>
+                                <rect key="frame" x="246" y="322.5" width="107" height="30"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-hz-ogj" userLabel="Switch View">
-                                <rect key="frame" x="200" y="198" width="200" height="30"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-hz-ogj" userLabel="Switch View">
+                                <rect key="frame" x="200" y="187.5" width="200" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-Dp-fnd">
-                                        <rect key="frame" x="147" y="-2" width="39.5" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-Dp-fnd">
+                                        <rect key="frame" x="146" y="2.5" width="40.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -843,8 +844,8 @@
                                         <color key="onTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Female" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-V6-f4T">
-                                        <rect key="frame" x="13" y="-2" width="55.5" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Female" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-V6-f4T">
+                                        <rect key="frame" x="13" y="2.5" width="62.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -869,17 +870,17 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-5S-GTH" userLabel="FromToView">
-                                <rect key="frame" x="215" y="280.5" width="170" height="30"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-5S-GTH" userLabel="FromToView">
+                                <rect key="frame" x="215" y="262.5" width="170" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySl-eu-KhT">
-                                        <rect key="frame" x="99" y="4" width="28" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySl-eu-KhT">
+                                        <rect key="frame" x="108" y="7.5" width="18.5" height="15"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="From: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-g6-G4m">
-                                        <rect key="frame" x="8" y="4" width="46.5" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="From: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-g6-G4m">
+                                        <rect key="frame" x="8" y="7.5" width="34" height="15"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -892,8 +893,8 @@
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-8g-fl3">
-                                        <rect key="frame" x="54" y="0.0" width="35" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-8g-fl3">
+                                        <rect key="frame" x="42" y="0.0" width="35" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="uY0-Rn-Eqb"/>
                                         </constraints>
@@ -929,8 +930,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcM-5u-e7U">
-                                <rect key="frame" x="261" y="398" width="79" height="93"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcM-5u-e7U">
+                                <rect key="frame" x="252.5" y="410" width="96" height="71"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="68"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,7 +942,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUt-A0-PPc">
-                                <rect key="frame" x="180.5" y="84" width="239" height="48"/>
+                                <rect key="frame" x="180" y="94" width="239" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="41"/>
                                 <state key="normal" title="Choose club or bar">
@@ -957,7 +958,7 @@
                                     <segue destination="BUD-rE-mq0" kind="presentation" identifier="postToPicker" id="vT2-zC-pby"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9d-G0-Xct" userLabel="You chose:">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9d-G0-Xct" userLabel="You chose:">
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -980,7 +981,7 @@
                             <constraint firstItem="y9d-G0-Xct" firstAttribute="top" secondItem="NUt-A0-PPc" secondAttribute="bottom" constant="30" id="Fc9-jR-m1i"/>
                             <constraint firstItem="lVZ-yt-aHy" firstAttribute="bottom" secondItem="5Fg-YM-i2p" secondAttribute="bottom" id="HFE-mC-jvZ"/>
                             <constraint firstItem="9Td-yM-m5j" firstAttribute="top" secondItem="5Fg-YM-i2p" secondAttribute="bottom" id="Hwp-rs-Dlj"/>
-                            <constraint firstItem="9Td-yM-m5j" firstAttribute="top" secondItem="TcM-5u-e7U" secondAttribute="bottom" constant="60" id="Hx0-Id-tH1"/>
+                            <constraint firstItem="9Td-yM-m5j" firstAttribute="top" secondItem="TcM-5u-e7U" secondAttribute="bottom" constant="70" id="Hx0-Id-tH1"/>
                             <constraint firstItem="lVZ-yt-aHy" firstAttribute="top" secondItem="NOg-F8-iZq" secondAttribute="topMargin" id="J6Z-7e-NTm"/>
                             <constraint firstItem="TcM-5u-e7U" firstAttribute="top" secondItem="y8z-Fy-iY7" secondAttribute="bottom" id="KcP-Cl-jIc"/>
                             <constraint firstItem="Ys0-2k-eKz" firstAttribute="top" secondItem="kGR-hz-ogj" secondAttribute="bottom" constant="30" id="O89-Ye-doX"/>
@@ -991,7 +992,7 @@
                             <constraint firstItem="cN0-He-ugq" firstAttribute="top" secondItem="y8z-Fy-iY7" secondAttribute="bottom" constant="25" id="b1t-ZI-Z6f"/>
                             <constraint firstAttribute="centerX" secondItem="kGR-hz-ogj" secondAttribute="centerX" id="dGl-Bp-tzM"/>
                             <constraint firstItem="nct-HV-NOg" firstAttribute="top" secondItem="y9d-G0-Xct" secondAttribute="bottom" constant="8" id="eJH-WW-Jce"/>
-                            <constraint firstItem="NUt-A0-PPc" firstAttribute="top" secondItem="sEp-gK-hsf" secondAttribute="bottom" constant="20" id="ehq-mf-ZmO"/>
+                            <constraint firstItem="NUt-A0-PPc" firstAttribute="top" secondItem="sEp-gK-hsf" secondAttribute="bottom" constant="30" id="ehq-mf-ZmO"/>
                             <constraint firstItem="lVZ-yt-aHy" firstAttribute="bottom" secondItem="5Fg-YM-i2p" secondAttribute="bottom" constant="49" id="g48-Ki-c9v"/>
                             <constraint firstItem="9Td-yM-m5j" firstAttribute="top" secondItem="TcM-5u-e7U" secondAttribute="bottom" constant="8" id="gT2-TU-utt"/>
                             <constraint firstItem="cN0-He-ugq" firstAttribute="bottom" secondItem="NOg-F8-iZq" secondAttribute="bottomMargin" constant="16" id="hcf-8k-MAG"/>

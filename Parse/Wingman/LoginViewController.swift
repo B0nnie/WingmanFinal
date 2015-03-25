@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     var snapBehavior: UISnapBehavior!
     
     
-    
+    var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +30,36 @@ class LoginViewController: UIViewController {
         
         self.logoImageView.layer.cornerRadius = 50
         self.logoImageView.clipsToBounds = true
+        
+        
     
         
        // hides navigation bar on LoginVC
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+      //  self.navigationController?.setNavigationBarHidden(true, animated: true)
         //sets navigation bar to a clear black color
          self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
+        self.navigationController?.navigationBarHidden = false
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
    
+        
+        
+        imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView!.clipsToBounds = true
+        
+        imageView!.contentMode = .ScaleAspectFill
+        
+        imageView!.hidden = true
+        let image = UIImage(named: "bar")
+        
+        imageView!.image = image
+        navigationItem.titleView = imageView
+
     
+        
     }
     
     
@@ -49,6 +68,8 @@ class LoginViewController: UIViewController {
         self.logoImageView.hidden = true
         self.loginButton.hidden = true
         self.signInButton.hidden = true
+        
+        self.imageView!.hidden = true
     }
     override func viewDidAppear(animated: Bool) {
         
@@ -58,9 +79,12 @@ class LoginViewController: UIViewController {
    
         self.logoImageView.layer.cornerRadius = 50
          self.logoImageView.clipsToBounds = true
-        
-        
        
+        self.imageView!.hidden = false
+        springScaleFrom(self.imageView!, 0, -100, 0.5, 0.5)
+        
+        
+      
         
         
         // animate the logoImageView
@@ -118,11 +142,12 @@ class LoginViewController: UIViewController {
             
             UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
         }
+////        
+////        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        
+ //        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        
+     
         
         
     }

@@ -26,7 +26,7 @@ class BrowseTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-     
+   
         
         tabBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
         
@@ -41,6 +41,7 @@ class BrowseTableViewController: UITableViewController {
         tabBarImageView!.image = image
         navigationItem.titleView = tabBarImageView
         
+        
       //  tableView.separatorColor = UIColor.blueColor()
         
         tableView.layoutMargins = UIEdgeInsetsZero
@@ -54,7 +55,8 @@ class BrowseTableViewController: UITableViewController {
     
         
         
-        gradientView.colors = [UIColor.blackColor(), UIColor.grayColor()]
+
+        gradientView.colors = [UIColor.blackColor(), UIColor.darkGrayColor()]
         
         // Optionally set some locations
      //   gradientView.locations = [0.0, 1.0]
@@ -79,21 +81,14 @@ class BrowseTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+   
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        
-        let imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
-        
-        
-        imageView.clipsToBounds = true
-        
-        imageView.contentMode = .ScaleAspectFill
-        
-        let image = UIImage(named: "bar")
-        imageView.image = image
-        navigationItem.titleView = imageView
+ 
+        tabBarImageView!.hidden = true
         
         self.tableView.backgroundColor = UIColor.blackColor()
         
@@ -131,13 +126,20 @@ class BrowseTableViewController: UITableViewController {
         tabBarImageView!.hidden = false
         springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
         
+            // addBlurEffect()
+        
         
     }
     
-//    func addBlurEffect()
-//    
-//    var bounds = self.
-    
+    func addBlurEffect() {
+        // Add blur view
+        var bounds = self.navigationController?.navigationBar.bounds as CGRect!
+        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        self.navigationController?.navigationBar.addSubview(visualEffectView)    // Here you can add visual effects to any UIView control.
+        // Replace custom view with navigation bar in above code to add effects to custom view.
+    }
     
     func loadCurrentUserAndThenLoadUsers() {
         var query = PFUser.query()
