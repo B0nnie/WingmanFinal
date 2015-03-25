@@ -55,6 +55,8 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     
     @IBOutlet weak var endTimeLabel: UILabel!
     
+    @IBOutlet weak var joinButton: UIButton!
+    
     var imageView: UIImageView?
     
     @IBAction func joinButton(sender: AnyObject) {
@@ -100,6 +102,11 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         navigationItem.titleView = imageView
         
         // Do any additional setup after loading the view.
+        
+        self.userImage.hidden = true
+        self.joinButton.hidden = true
+        
+        
     }
     
     override func viewDidAppear(animated:Bool){
@@ -116,6 +123,13 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
          imageView!.hidden = false
         springScaleFrom(imageView!, 200, 0, 0.5, 0.5)
+        
+         self.userImage.hidden = false
+        springScaleFrom(userImage!, 0, -400, 0.5, 0.5)
+        
+        self.joinButton.hidden = false
+        springScaleFrom(joinButton!, 0, 200, 0.5, 0.5)
+        
         
     }
     

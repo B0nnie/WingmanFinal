@@ -745,6 +745,7 @@
                         <outlet property="endTimeLabel" destination="cDp-4B-8iB" id="Mbn-1B-YF6"/>
                         <outlet property="genderLabel" destination="Wcu-cz-pkX" id="o5f-cn-ujf"/>
                         <outlet property="interestsLabel" destination="4Qv-8e-nta" id="mGq-x2-aRW"/>
+                        <outlet property="joinButton" destination="826-n4-NpW" id="8r7-3v-OYW"/>
                         <outlet property="seekingLabel" destination="Z4J-0E-ZQx" id="b9R-8q-ja6"/>
                         <outlet property="startTimeLabel" destination="pk4-wF-htb" id="wps-m2-NmP"/>
                         <outlet property="userImage" destination="ppu-vM-UJ4" id="T4l-LI-lp8"/>
