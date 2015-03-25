@@ -30,6 +30,10 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
+    
+
+    
+
     @IBAction func backButton(sender: AnyObject) {
         
         self.presentingViewController?.tabBarController?.tabBar.hidden = false

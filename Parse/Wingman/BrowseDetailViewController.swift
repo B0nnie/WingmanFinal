@@ -19,6 +19,11 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     var venueLocation: PFGeoPoint?
     
     var phoneNumber: String?
+    
+    
+    var myCustomBackButtonItem: UIBarButtonItem?
+    
+    var customButton: UIButton?
 
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -64,6 +69,22 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         fillLabels()
         
         startUpdatingLocation()
+        
+        customButton = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
+        customButton!.setBackgroundImage(UIImage(named: "backbutton"), forState: UIControlState.Normal)
+        
+        
+        customButton!.sizeToFit()
+        
+        customButton!.hidden = true
+        customButton!.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        myCustomBackButtonItem = UIBarButtonItem(customView: customButton!)
+        
+        
+        
+        self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
+
        
         
         // Do any additional setup after loading the view.
@@ -75,7 +96,18 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
         startUpdatingLocation()
         
+        customButton!.hidden = false
+        springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
+
+        
     }
+    
+    
+    func popToRoot(sender:UIBarButtonItem) {
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     
     func fillLabels() {
         

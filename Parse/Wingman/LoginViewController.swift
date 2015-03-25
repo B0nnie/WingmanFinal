@@ -24,28 +24,45 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        
         animator = UIDynamicAnimator(referenceView: view)
         
         self.logoImageView.layer.cornerRadius = 50
         self.logoImageView.clipsToBounds = true
     
-        //hides navigation bar on LoginVC
+        
+       // hides navigation bar on LoginVC
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //sets navigation bar to a clear black color
          self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+   
     
     }
     
     
     override func viewWillAppear(animated: Bool) {
+
         self.logoImageView.hidden = true
         self.loginButton.hidden = true
         self.signInButton.hidden = true
     }
     override func viewDidAppear(animated: Bool) {
+        
+        
+        var nav = self.navigationController?.navigationBar
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "Icon")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
         self.logoImageView.layer.cornerRadius = 50
          self.logoImageView.clipsToBounds = true
         

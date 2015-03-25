@@ -9,6 +9,7 @@
 import UIKit
 @IBDesignable
 
+
 class RegisterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 
 {
@@ -20,7 +21,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var user = PFUser()
     var registerInfo = [String:AnyObject]()
     
+    var myCustomBackButtonItem: UIBarButtonItem?
     
+    var customButton: UIButton?
     
     
     override func viewDidLoad() {
@@ -37,9 +40,31 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
+        
+        var nav = self.navigationController?.navigationBar
+        
+        customButton = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
+        customButton!.setBackgroundImage(UIImage(named: "backbutton"), forState: UIControlState.Normal)
+        
+
+        customButton!.sizeToFit()
+        
+        customButton!.hidden = true
+        customButton!.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        myCustomBackButtonItem = UIBarButtonItem(customView: customButton!)
+        
+        
+        
+        self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
+
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        
+
         self.createUsernameField.hidden = true
         self.createPasswordField.hidden = true
         self.enterEmailField.hidden = true
@@ -51,7 +76,24 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     override func viewDidAppear(animated: Bool) {
+     
+        customButton!.hidden = false
+         springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
         
+        let imageView = UIImageView(frame: CGRect(x: -60, y: 0, width: 110, height: 40))
+        
+  
+        
+      
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "bar")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
+       
+        self.logoImageView.layer.cornerRadius = 50
+        self.logoImageView.clipsToBounds = true
         
         // animate the logoImageView
         var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
@@ -142,7 +184,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
 //        self.navigationController?.navigationBar.tintColor = UIColor.clearColor()
 //        
 //         self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-        
+//        
          self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
          self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -283,6 +325,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var pickProfilePicButton: UIButton!
     
     
+    @IBOutlet weak var logoImageView: UIImageView!
     
     @IBAction func genderSC(sender: UISegmentedControl) {
         
@@ -323,6 +366,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
 
     @IBOutlet @IBInspectable  weak var interestField: UITextView!
     
+    func popToRoot(sender:UIBarButtonItem) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     
     @IBAction func signUp(sender: AnyObject) {
         

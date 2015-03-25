@@ -338,6 +338,7 @@
                         <outlet property="createUsernameField" destination="m4v-Sv-KP9" id="KCn-ai-JK5"/>
                         <outlet property="enterEmailField" destination="SAe-to-C8U" id="f4e-nP-R8G"/>
                         <outlet property="interestField" destination="GV8-QY-9YH" id="SuR-eK-G81"/>
+                        <outlet property="logoImageView" destination="D8C-CC-t1T" id="olu-M1-aLi"/>
                         <outlet property="pickProfilePicButton" destination="DC1-oe-DgR" id="9XS-jl-waX"/>
                         <outlet property="pickedImage" destination="D8C-CC-t1T" id="Ufk-NN-phs"/>
                     </connections>
@@ -386,7 +387,7 @@
         <!--Browse-->
         <scene sceneID="zYy-eo-ZcM">
             <objects>
-                <navigationController title="Browse" automaticallyAdjustsScrollViewInsets="NO" id="7ft-bf-VnM" sceneMemberID="viewController">
+                <navigationController title="Browse" automaticallyAdjustsScrollViewInsets="NO" id="7ft-bf-VnM" customClass="RootNavigationController" customModule="Wingman" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" image="glass.png" id="np2-K2-9Sq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h9Q-rK-h3P">
@@ -735,7 +736,7 @@
         <!--Post-->
         <scene sceneID="ccA-Yg-6En">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydc-ua-YNX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydc-ua-YNX" customClass="RootNavigationController" customModule="Wingman" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Post" image="pushpin.png" id="30g-Od-dA6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9E-Ki-GJY">

@@ -221,10 +221,11 @@ class BrowseTableViewController: UITableViewController {
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
-        
+       
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
 
+        cell.selectionStyle = .None
+        
         cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
 
