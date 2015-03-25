@@ -26,6 +26,14 @@ class BrowseTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+   
+        springScaleFrom(genderLabel, 200, 200, 0.5, 0.5)
+        
+        springScaleFrom(usernameLabel, 200, 200, 0.5, 0.5)
+        springScaleFrom(clubOrBarLabel, 200, 200, 0.5, 0.5)
+        springScaleFrom(timeLabel, 200, 200, 0.5, 0.5)
+        
+        springScaleFrom(userImage, -100, 200, 0.5, 0.5)
   
     }
 
