@@ -64,6 +64,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

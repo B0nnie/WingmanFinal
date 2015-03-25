@@ -76,6 +76,8 @@ class BrowseTableViewController: UITableViewController {
     
              self.loadCurrentUserAndThenLoadUsers()
         
+// self.tableView.hidden = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,6 +91,7 @@ class BrowseTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
  
         tabBarImageView!.hidden = true
+      //  self.tableView.hidden = true
         
         self.tableView.backgroundColor = UIColor.blackColor()
         
@@ -108,6 +111,7 @@ class BrowseTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         
         
+       //  self.tableView.hidden = false
         self.tableView.backgroundColor = UIColor.blackColor()
         
         
@@ -128,6 +132,7 @@ class BrowseTableViewController: UITableViewController {
         
             // addBlurEffect()
         
+        self.tableView.reloadData()
         
     }
     
@@ -263,6 +268,7 @@ class BrowseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
        
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
 
         cell.selectionStyle = .None
@@ -270,6 +276,16 @@ class BrowseTableViewController: UITableViewController {
         cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
 
+        
+//        
+//        springScaleFrom(cell.genderLabel, 200, 200, 0.5, 0.5)
+//        
+//        springScaleFrom(cell.usernameLabel, 200, 200, 0.5, 0.5)
+//        springScaleFrom(cell.clubOrBarLabel, 200, 200, 0.5, 0.5)
+//        springScaleFrom(cell.timeLabel, 200, 200, 0.5, 0.5)
+//        
+//        springScaleFrom(cell.userImage, -100, 200, 0.5, 0.5)
+        
         var registerInfo = self.arrayOfRegisterInfo[indexPath.row]
         
         

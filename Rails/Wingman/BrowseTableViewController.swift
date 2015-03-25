@@ -175,7 +175,7 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
 
         var event = self.arrayOfEvents[indexPath.row]
         
-        
+
         /*
         if let imageFile = registerInfo["imageFile"] as? PFFile {
             imageFile.getDataInBackgroundWithBlock({
@@ -230,6 +230,14 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
             }
             
             
+        }
+        
+        if let userInfo = event["user"] as? [String: AnyObject?] {
+            
+            if let imageFile = userInfo["avatar_content_type"] {
+        
+          //      cell.userImage = imageFile
+            }
         }
         
         

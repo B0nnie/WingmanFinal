@@ -76,6 +76,8 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
         if let event = event  {
             
+            
+            
             if let username = event["creator_name"] as? String {
                 
                 self.usernameLabel.text = username
@@ -132,6 +134,14 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
                     self.venueLocation = venueLocation
                 }
                 
+            }
+            
+            if let userInfo = event["user"] as? [String: AnyObject?] {
+                
+                if let imageFile = userInfo["avatar_content_type"] {
+                    
+                 //   self.userImage = imageFile
+                }
             }
 
             
