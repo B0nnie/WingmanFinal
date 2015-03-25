@@ -787,11 +787,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-yt-aHy">
-                                <rect key="frame" x="-1" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-yt-aHy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Club.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-He-ugq">
-                                <rect key="frame" x="0.0" y="377.5" width="600" height="238.5"/>
+                                <rect key="frame" x="0.0" y="383" width="600" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="RAh-62-Mv2"/>
                                     <constraint firstAttribute="width" constant="600" id="j5Y-po-MJ1"/>
@@ -806,7 +806,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fg-YM-i2p">
-                                <rect key="frame" x="0.0" y="377.5" width="600" height="238.5"/>
+                                <rect key="frame" x="0.0" y="383" width="600" height="233"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="WHE-KM-M3K"/>
@@ -825,7 +825,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="We're gonna hang out " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys0-2k-eKz">
-                                <rect key="frame" x="236" y="247.5" width="128.5" height="15.5"/>
+                                <rect key="frame" x="236" y="247" width="128.5" height="15.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="3Tm-ua-SDb"/>
                                 </constraints>
@@ -839,15 +839,18 @@
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8z-Fy-iY7">
-                                <rect key="frame" x="246" y="322.5" width="107" height="30"/>
+                                <rect key="frame" x="200" y="328" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="m7H-p3-QCo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-hz-ogj" userLabel="Switch View">
-                                <rect key="frame" x="200" y="187.5" width="200" height="30"/>
+                                <rect key="frame" x="200" y="187" width="200" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-Dp-fnd">
-                                        <rect key="frame" x="146" y="2.5" width="40.5" height="24.5"/>
+                                        <rect key="frame" x="146" y="2" width="40.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -858,7 +861,7 @@
                                         <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Female" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-V6-f4T">
-                                        <rect key="frame" x="13" y="2.5" width="62.5" height="24.5"/>
+                                        <rect key="frame" x="13" y="2" width="62.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -884,16 +887,16 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-5S-GTH" userLabel="FromToView">
-                                <rect key="frame" x="215" y="262.5" width="170" height="30"/>
+                                <rect key="frame" x="215" y="268" width="170" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySl-eu-KhT">
-                                        <rect key="frame" x="108" y="7.5" width="18.5" height="15"/>
+                                        <rect key="frame" x="108" y="7" width="18.5" height="15"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="From: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-g6-G4m">
-                                        <rect key="frame" x="8" y="7.5" width="34" height="15"/>
+                                        <rect key="frame" x="8" y="7" width="34" height="15"/>
                                         <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -944,7 +947,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcM-5u-e7U">
-                                <rect key="frame" x="252.5" y="410" width="96" height="71"/>
+                                <rect key="frame" x="252" y="410" width="96" height="71"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="68"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -985,7 +988,7 @@
                             <constraint firstItem="9Td-yM-m5j" firstAttribute="top" secondItem="TcM-5u-e7U" secondAttribute="bottom" constant="8" id="5Rs-GG-uQ8"/>
                             <constraint firstAttribute="centerX" secondItem="TcM-5u-e7U" secondAttribute="centerX" id="6qk-Rn-03z"/>
                             <constraint firstItem="y8z-Fy-iY7" firstAttribute="top" secondItem="GL8-5S-GTH" secondAttribute="bottom" constant="30" id="7fF-Ck-39E"/>
-                            <constraint firstItem="GL8-5S-GTH" firstAttribute="top" secondItem="Ys0-2k-eKz" secondAttribute="bottom" id="9NC-tf-rKq"/>
+                            <constraint firstItem="GL8-5S-GTH" firstAttribute="top" secondItem="Ys0-2k-eKz" secondAttribute="bottom" constant="5" id="9NC-tf-rKq"/>
                             <constraint firstAttribute="centerX" secondItem="NUt-A0-PPc" secondAttribute="centerX" id="B3l-Qn-TWv"/>
                             <constraint firstItem="kGR-hz-ogj" firstAttribute="top" secondItem="nct-HV-NOg" secondAttribute="bottom" constant="8" id="BIi-dS-9Ln"/>
                             <constraint firstItem="5Fg-YM-i2p" firstAttribute="top" secondItem="y8z-Fy-iY7" secondAttribute="bottom" constant="25" id="Bgz-M6-8Wd"/>
