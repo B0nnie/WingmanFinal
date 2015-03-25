@@ -530,6 +530,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-bR-Uda">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afP-xS-0d2">
+                                <rect key="frame" x="104" y="35" width="112.5" height="31"/>
+                                <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ppu-vM-UJ4">
                                 <rect key="frame" x="100" y="84" width="120" height="120"/>
                                 <constraints>
@@ -616,45 +622,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBF-mZ-vQM">
-                                <rect key="frame" x="107" y="415.5" width="107" height="99.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-wF-htb">
-                                        <rect key="frame" x="17" y="42" width="44" height="15"/>
-                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-4B-8iB">
-                                        <rect key="frame" x="85" y="42" width="28" height="15"/>
-                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="pk4-wF-htb" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="9" id="86R-dK-HqL"/>
-                                    <constraint firstItem="pk4-wF-htb" firstAttribute="leading" secondItem="YBF-mZ-vQM" secondAttribute="leading" constant="17" id="BL9-8B-Org"/>
-                                    <constraint firstItem="pk4-wF-htb" firstAttribute="top" secondItem="cDp-4B-8iB" secondAttribute="top" id="E9g-64-eRy"/>
-                                    <constraint firstAttribute="centerY" secondItem="pk4-wF-htb" secondAttribute="centerY" id="GWu-YU-Iqy"/>
-                                    <constraint firstAttribute="trailing" secondItem="cDp-4B-8iB" secondAttribute="trailing" constant="-6" id="Wat-up-slB"/>
-                                    <constraint firstAttribute="bottom" secondItem="pk4-wF-htb" secondAttribute="bottom" constant="7" id="Zm9-QC-yFA"/>
-                                    <constraint firstAttribute="centerY" secondItem="cDp-4B-8iB" secondAttribute="centerY" id="dET-Np-R4b"/>
-                                    <constraint firstAttribute="bottom" secondItem="cDp-4B-8iB" secondAttribute="bottom" constant="5" id="dG1-yH-C33"/>
-                                    <constraint firstItem="cDp-4B-8iB" firstAttribute="leading" secondItem="pk4-wF-htb" secondAttribute="trailing" constant="24" id="fni-UC-iex"/>
-                                    <constraint firstItem="pk4-wF-htb" firstAttribute="bottom" secondItem="cDp-4B-8iB" secondAttribute="bottom" id="of4-qc-UdF"/>
-                                    <constraint firstItem="cDp-4B-8iB" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="11" id="w6z-B0-1Yd"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="86R-dK-HqL"/>
-                                        <exclude reference="Zm9-QC-yFA"/>
-                                        <exclude reference="dG1-yH-C33"/>
-                                        <exclude reference="w6z-B0-1Yd"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-fG-QJq">
                                 <rect key="frame" x="271" y="20" width="33" height="25"/>
                                 <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="15"/>
@@ -666,12 +633,49 @@
                                     <action selector="logout:" destination="GkM-aB-zwl" eventType="touchUpInside" id="02R-MF-Xle"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afP-xS-0d2">
-                                <rect key="frame" x="104" y="35" width="112.5" height="31"/>
-                                <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBF-mZ-vQM">
+                                <rect key="frame" x="106" y="415.5" width="107" height="99.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-wF-htb">
+                                        <rect key="frame" x="17" y="14" width="44" height="15"/>
+                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-4B-8iB">
+                                        <rect key="frame" x="85" y="14" width="28" height="15"/>
+                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pk4-wF-htb" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="9" id="86R-dK-HqL"/>
+                                    <constraint firstItem="pk4-wF-htb" firstAttribute="leading" secondItem="YBF-mZ-vQM" secondAttribute="leading" constant="17" id="BL9-8B-Org"/>
+                                    <constraint firstItem="pk4-wF-htb" firstAttribute="top" secondItem="cDp-4B-8iB" secondAttribute="top" id="E9g-64-eRy"/>
+                                    <constraint firstAttribute="centerY" secondItem="pk4-wF-htb" secondAttribute="centerY" id="GWu-YU-Iqy"/>
+                                    <constraint firstItem="cDp-4B-8iB" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="14" id="IJk-s1-YIF"/>
+                                    <constraint firstItem="pk4-wF-htb" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="14" id="NNu-zw-pcf"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDp-4B-8iB" secondAttribute="trailing" constant="-6" id="Wat-up-slB"/>
+                                    <constraint firstAttribute="bottom" secondItem="pk4-wF-htb" secondAttribute="bottom" constant="7" id="Zm9-QC-yFA"/>
+                                    <constraint firstAttribute="centerY" secondItem="cDp-4B-8iB" secondAttribute="centerY" id="dET-Np-R4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDp-4B-8iB" secondAttribute="bottom" constant="5" id="dG1-yH-C33"/>
+                                    <constraint firstItem="cDp-4B-8iB" firstAttribute="leading" secondItem="pk4-wF-htb" secondAttribute="trailing" constant="24" id="fni-UC-iex"/>
+                                    <constraint firstItem="pk4-wF-htb" firstAttribute="bottom" secondItem="cDp-4B-8iB" secondAttribute="bottom" id="of4-qc-UdF"/>
+                                    <constraint firstItem="cDp-4B-8iB" firstAttribute="top" secondItem="YBF-mZ-vQM" secondAttribute="top" constant="11" id="w6z-B0-1Yd"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="86R-dK-HqL"/>
+                                        <exclude reference="GWu-YU-Iqy"/>
+                                        <exclude reference="Zm9-QC-yFA"/>
+                                        <exclude reference="dET-Np-R4b"/>
+                                        <exclude reference="dG1-yH-C33"/>
+                                        <exclude reference="w6z-B0-1Yd"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -741,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77d-gb-B7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4276" y="69"/>
+            <point key="canvasLocation" x="4276" y="69.5"/>
         </scene>
         <!--Post-->
         <scene sceneID="ccA-Yg-6En">
