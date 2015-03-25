@@ -55,6 +55,8 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     
     @IBOutlet weak var endTimeLabel: UILabel!
     
+    var imageView: UIImageView?
+    
     @IBAction func joinButton(sender: AnyObject) {
          messageUser()
     }
@@ -85,7 +87,17 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
         self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
 
-       
+        imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView!.clipsToBounds = true
+        
+        imageView!.contentMode = .ScaleAspectFill
+        
+        imageView!.hidden = true
+        let image = UIImage(named: "bar")
+        imageView!.image = image
+        navigationItem.titleView = imageView
         
         // Do any additional setup after loading the view.
     }
@@ -94,11 +106,16 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
       //  self.navigationController?.navigationItem.backBarButtonItem =
         
+        
+        
         startUpdatingLocation()
         
         customButton!.hidden = false
         springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
 
+        
+         imageView!.hidden = false
+        springScaleFrom(imageView!, 200, 0, 0.5, 0.5)
         
     }
     
@@ -293,6 +310,21 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func logout(sender: AnyObject) {
+        
+        
+        let user = PFUser.currentUser() as PFUser
+        
+        PFUser.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        
+        
+        //presents LoginViewController without tabbar at bottom
+        self.presentViewController(nc, animated: true, completion: nil)
+    }
     
 
 

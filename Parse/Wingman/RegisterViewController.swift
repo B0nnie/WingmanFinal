@@ -26,6 +26,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var customButton: UIButton?
     
     
+    var imageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        
@@ -57,6 +59,19 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         
         self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
+        
+        imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView!.clipsToBounds = true
+        
+        imageView!.contentMode = .ScaleAspectFill
+        
+        imageView!.hidden = true
+        let image = UIImage(named: "bar")
+        imageView!.image = image
+        navigationItem.titleView = imageView
+
 
         
     }
@@ -79,18 +94,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
      
         customButton!.hidden = false
          springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
-        
-        let imageView = UIImageView(frame: CGRect(x: -60, y: 0, width: 110, height: 40))
-        
+ 
   
-        
-      
-        imageView.contentMode = .ScaleAspectFit
-        
-        let image = UIImage(named: "bar")
-        imageView.image = image
-        navigationItem.titleView = imageView
-        
+
+        imageView!.hidden = false
+        springScaleFrom(imageView!, 200, 0, 0.5, 0.5)
        
         self.logoImageView.layer.cornerRadius = 50
         self.logoImageView.clipsToBounds = true
@@ -260,6 +268,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         picker.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
     
     func resizeImage(original : UIImage, toSize size:CGSize) -> UIImage
     {

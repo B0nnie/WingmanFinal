@@ -40,6 +40,9 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     @IBOutlet weak var postImageView: UIView!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    var tabBarImageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.hidden = false
@@ -68,7 +71,18 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
             
         }*/
         
+        tabBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
         
+        
+        tabBarImageView!.clipsToBounds = true
+        
+        tabBarImageView!.contentMode = .ScaleAspectFill
+        
+        tabBarImageView!.hidden = true
+        let image = UIImage(named: "bar")
+        tabBarImageView!.image = image
+        navigationItem.titleView = tabBarImageView
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -95,6 +109,11 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
         var translate1 = CGAffineTransformMakeTranslation(0, -100)
         self.chooseBarButton.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        tabBarImageView!.hidden = false
+        springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
+        
+      
         
         spring(1) {
             

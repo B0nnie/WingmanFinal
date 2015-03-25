@@ -20,11 +20,28 @@ class BrowseTableViewController: UITableViewController {
     
      var arrayOfPostData = [[String: AnyObject]]()
     
+       var tabBarImageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
      
         
+        tabBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        tabBarImageView!.clipsToBounds = true
+        
+        tabBarImageView!.contentMode = .ScaleAspectFill
+        
+        tabBarImageView!.hidden = true
+        
+        let image = UIImage(named: "bar")
+        tabBarImageView!.image = image
+        navigationItem.titleView = tabBarImageView
+        
+      //  tableView.separatorColor = UIColor.blueColor()
         
         tableView.layoutMargins = UIEdgeInsetsZero
         
@@ -66,6 +83,18 @@ class BrowseTableViewController: UITableViewController {
     
     
     override func viewWillAppear(animated: Bool) {
+        
+        let imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView.clipsToBounds = true
+        
+        imageView.contentMode = .ScaleAspectFill
+        
+        let image = UIImage(named: "bar")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
         self.tableView.backgroundColor = UIColor.blackColor()
         
         //sets navigation bar to a clear black color
@@ -83,7 +112,9 @@ class BrowseTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        
         self.tableView.backgroundColor = UIColor.blackColor()
+        
         
         //sets navigation bar to a clear black color
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
@@ -97,7 +128,15 @@ class BrowseTableViewController: UITableViewController {
      
         self.navigationController?.navigationItem.backBarButtonItem = backButton
         
+        tabBarImageView!.hidden = false
+        springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
+        
+        
     }
+    
+//    func addBlurEffect()
+//    
+//    var bounds = self.
     
     
     func loadCurrentUserAndThenLoadUsers() {
@@ -341,20 +380,5 @@ class BrowseTableViewController: UITableViewController {
 //    }
     
     
-    @IBAction func Logout(sender: AnyObject) {
-        
-        let user = PFUser.currentUser() as PFUser
-        
-        PFUser.logOut()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
-        
-
-        //presents LoginViewController without tabbar at bottom
-        self.presentViewController(nc, animated: true, completion: nil)
-    }
-    
-
+   
    }
