@@ -10,7 +10,6 @@ import UIKit
 
 class BrowseTableViewController: UITableViewController {
     
-    
     var phoneNumber: String?
     
     var wingmen: [[String:AnyObject]] = []
@@ -84,16 +83,16 @@ class BrowseTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        let imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        let navBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
         
+        view.bringSubviewToFront(navBarImageView)
         
-        imageView.clipsToBounds = true
-        
-        imageView.contentMode = .ScaleAspectFill
+        navBarImageView.clipsToBounds = true
+        navBarImageView.contentMode = .ScaleAspectFill
         
         let image = UIImage(named: "bar")
-        imageView.image = image
-        navigationItem.titleView = imageView
+        navBarImageView.image = image
+        navigationItem.titleView = navBarImageView
         
         self.tableView.backgroundColor = UIColor.blackColor()
         
