@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29775D301AA3D45800A56925"
-               BuildableName = "RailsWingma.app"
-               BlueprintName = "RailsWingman"
-               ReferencedContainer = "container:RailsWingman.xcodeproj">
+               BuildableName = "Wingman.app"
+               BlueprintName = "Wingman"
+               ReferencedContainer = "container:Wingman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29775D451AA3D45800A56925"
-               BuildableName = "RailsWingmaTests.xctest"
-               BlueprintName = "RailsWingmanTests"
-               ReferencedContainer = "container:RailsWingman.xcodeproj">
+               BuildableName = "WingmanTests.xctest"
+               BlueprintName = "WingmanTests"
+               ReferencedContainer = "container:Wingman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29775D451AA3D45800A56925"
-               BuildableName = "RailsWingmaTests.xctest"
-               BlueprintName = "RailsWingmanTests"
-               ReferencedContainer = "container:RailsWingman.xcodeproj">
+               BuildableName = "WingmanTests.xctest"
+               BlueprintName = "WingmanTests"
+               ReferencedContainer = "container:Wingman.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29775D301AA3D45800A56925"
-            BuildableName = "RailsWingma.app"
-            BlueprintName = "RailsWingman"
-            ReferencedContainer = "container:RailsWingman.xcodeproj">
+            BuildableName = "Wingman.app"
+            BlueprintName = "Wingman"
+            ReferencedContainer = "container:Wingman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29775D301AA3D45800A56925"
-            BuildableName = "RailsWingma.app"
-            BlueprintName = "RailsWingman"
-            ReferencedContainer = "container:RailsWingman.xcodeproj">
+            BuildableName = "Wingman.app"
+            BlueprintName = "Wingman"
+            ReferencedContainer = "container:Wingman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29775D301AA3D45800A56925"
-            BuildableName = "RailsWingma.app"
-            BlueprintName = "RailsWingman"
-            ReferencedContainer = "container:RailsWingman.xcodeproj">
+            BuildableName = "Wingman.app"
+            BlueprintName = "Wingman"
+            ReferencedContainer = "container:Wingman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

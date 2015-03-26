@@ -145,8 +145,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
             
             
         }
-        
- 
+
 
         
     }
@@ -188,6 +187,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
                 var wingmanGender = self.postData["wingmanGender"] as String
                 user["wingmanGender"] = wingmanGender
              
+      
                 user.saveInBackground()
                 
                   self.showAlert()

@@ -49,43 +49,46 @@ class FourSquareAPI: NSObject {
             
             let strData = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
-            
-            if((err) != nil) {
-                println(err!.localizedDescription)
-            }
-                
-            else {
-                var venues = [ClubOrBarVenues]()
-                
-                if json.count>0 {
-                    if let response: NSDictionary = json["response"] as? NSDictionary {
-                        
-                        println("\(response)")
-                        
-                        let allVenues: [NSDictionary] = response["venues"] as [NSDictionary]
-                        
-                        for venue:NSDictionary in allVenues {
-                            var venueName:String = venue["name"] as String
+            if let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary? {
+                if((err) != nil) {
+                    println(err!.localizedDescription)
+                }
+                    
+                else {
+                    var venues = [ClubOrBarVenues]()
+                    
+                    if json.count>0 {
+                        if let response: NSDictionary = json["response"] as? NSDictionary {
                             
-                            var location:NSDictionary = venue["location"] as NSDictionary
-                            var venueLocation:CLLocation = CLLocation(latitude: location["lat"] as Double, longitude: location["lng"] as Double)
+                            println("\(response)")
                             
-                            venues.append(ClubOrBarVenues(name: venueName, location: venueLocation, distanceFromUser: venueLocation.distanceFromLocation(userLocation)))
+                            let allVenues: [NSDictionary] = response["venues"] as [NSDictionary]
+                            
+                            for venue:NSDictionary in allVenues {
+                                var venueName:String = venue["name"] as String
+                                
+                                var location:NSDictionary = venue["location"] as NSDictionary
+                                var venueLocation:CLLocation = CLLocation(latitude: location["lat"] as Double, longitude: location["lng"] as Double)
+                                
+                                venues.append(ClubOrBarVenues(name: venueName, location: venueLocation, distanceFromUser: venueLocation.distanceFromLocation(userLocation)))
+                            }
                         }
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            
+                            self.delegate?.didReceiveVenues(venues)
+                            println(venues)
+                            
+                        })
+                        
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
-                        self.delegate?.didReceiveVenues(venues)
-                        println(venues)
-                        
-                    })
-                    
                 }
+
                 
             }
-        })
+            
+                   })
         
         task.resume()
     }

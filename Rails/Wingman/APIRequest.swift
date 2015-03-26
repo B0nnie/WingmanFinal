@@ -8,6 +8,8 @@
 
 import Foundation
 
+// amazon s3 buckets save images, cached images
+
 let RAILS_URL = "https://cryptic-mesa-8497.herokuapp.com"
 
 var email: String?
@@ -21,6 +23,8 @@ class APIRequest {
     
     
    
+
+
     
     // (responseInfo: [String:AnyObject]) -> ()
     
@@ -39,8 +43,15 @@ class APIRequest {
         
         // method is post
         request.HTTPMethod = options["method"] as String
-        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        //let boundary = self.generateBoundaryString()
+        
+        //request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        
         
         if let token = User.currentUser().token {
             
@@ -89,6 +100,7 @@ class APIRequest {
                 
                 // WE CALL THE COMPLETION BLOCK
                 completion(responseInfo: json, error: nil)
+                
             }
                 
             else {
@@ -106,6 +118,6 @@ class APIRequest {
         
 }
 
-
-
+  
+    
 }

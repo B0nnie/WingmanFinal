@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-
-class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
+class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
     
     
     var phoneNumber: String?
@@ -22,14 +20,62 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
     
      var arrayOfPostData = [[String: AnyObject]]()
     
-    var arrayOfEvents = [[String: AnyObject]]()
+       var tabBarImageView: UIImageView?
+    
+     var arrayOfEvents = [[String: AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    // self.loadCurrentUserAndThenLoadUsers()
-        println("THIS IS THE TOKEN: \(User.currentUser().token)")
         
+   
+        
+        tabBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        tabBarImageView!.clipsToBounds = true
+        
+        tabBarImageView!.contentMode = .ScaleAspectFill
+        
+        tabBarImageView!.hidden = true
+        
+        let image = UIImage(named: "bar")
+        tabBarImageView!.image = image
+        navigationItem.titleView = tabBarImageView
+        
+        
+      //  tableView.separatorColor = UIColor.blueColor()
+        
+        tableView.layoutMargins = UIEdgeInsetsZero
+        
+        tableView.separatorInset = UIEdgeInsetsZero
+
+        let gradientView = GradientView(frame: CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height))
+        
+        // Set the gradient colors
+        
+    
+        
+        
+
+        gradientView.colors = [UIColor.blackColor(), UIColor.darkGrayColor()]
+        
+        // Optionally set some locations
+     //   gradientView.locations = [0.0, 1.0]
+        
+        // Optionally change the direction. The default is vertical.
+        gradientView.direction = .Vertical
+        
+        
+
+//        
+//        gradientView.topBorderColor = UIColor.blueColor()
+//        gradientView.bottomBorderColor = UIColor.blueColor()
+//
+//        
+   
+        tableView.backgroundView = gradientView
+    
         User.currentUser().getEventsDelegate  = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,11 +84,24 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         User.currentUser().getEvents()
+        
+        
+// self.tableView.hidden = true
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+   
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+ 
+        tabBarImageView!.hidden = true
+      //  self.tableView.hidden = true
         
         self.tableView.backgroundColor = UIColor.blackColor()
         
@@ -52,100 +111,52 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
+        var backButton = UIBarButtonItem()
+        var backButtonImage = UIImage(named: "backbutton")
+        backButton.setBackButtonBackgroundImage(backButtonImage, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
         
-
+        self.navigationController?.navigationItem.backBarButtonItem = backButton
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
+       //  self.tableView.hidden = false
+        self.tableView.backgroundColor = UIColor.blackColor()
+        
+        
+        //sets navigation bar to a clear black color
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        //sets navigation bar's "Back" button item to white
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        var backButton = UIBarButtonItem()
+        var backButtonImage = UIImage(named: "backbutton")
+        backButton.setBackButtonBackgroundImage(backButtonImage, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+     
+        self.navigationController?.navigationItem.backBarButtonItem = backButton
+        
+        tabBarImageView!.hidden = false
+        springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
+        
+            // addBlurEffect()
+        
+        self.tableView.reloadData()
         
     }
     
-    
-    func loadCurrentUserAndThenLoadUsers() {
-        var query = PFUser.query()
-        query.whereKey("objectId", equalTo: PFUser.currentUser().objectId)
-        
-        query.findObjectsInBackgroundWithBlock() {
-            (objects:[AnyObject]!, error:NSError!)->Void in
-            if ((error) == nil) {
-                
-                if let user = objects.last as PFUser? {
-                    
-                    
-                    
-                // if we created a postData, the user has a wingmanGender in parse that user is seeking
-                    if let seekingGender = user["wingmanGender"] as String? {
-                        
-                        if let gender = user["gender"] as String? {
-                            User.currentUser().getEvents()
-                            //self.loadUsers(seekingGender, ourGender: gender)
-                        }
-                       
-                    }
-                    
-                        
-                        // otherwise (if we dont have a postData dict), load all users (no arguments in the function)
-                    
-                    else {
-                        User.currentUser().getEvents()
-                        //self.loadUsers(nil, ourGender: nil)
-                        
-                    }
-                }
-            }
-            
-            
-        }
-        
+    func addBlurEffect() {
+        // Add blur view
+        var bounds = self.navigationController?.navigationBar.bounds as CGRect!
+        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        self.navigationController?.navigationBar.addSubview(visualEffectView)    // Here you can add visual effects to any UIView control.
+        // Replace custom view with navigation bar in above code to add effects to custom view.
     }
     
-    func loadUsers(seekingGender: String?, ourGender: String?) {
-        
-//        var query = PFQuery(className:"_User")
-         var query = PFUser.query()
-        
-         query.whereKeyExists("postData")
-    
-         query.whereKey("objectId", notEqualTo: PFUser.currentUser().objectId)
-        
-        // if we have a seekingGender, then load only users whose gender is our seekingGender, else return all users that are not current user (never go into that loop)
-        if let seekingGender = seekingGender as String? {
-           
-            if let ourGender = ourGender as String? {
-                query.whereKey("gender", equalTo: seekingGender)
-                
-                query.whereKey("wingmanGender", equalTo: ourGender)
-
-            }
-           
-        }
-
-        
-        query.findObjectsInBackgroundWithBlock() {
-            (objects:[AnyObject]!, error:NSError!)->Void in
-            if ((error) == nil) {
-
-            
-                for user in objects {
-                    
-                    if let registerInfo = user["registerInfo"] as? [String: AnyObject] {
-                        
-                        self.arrayOfRegisterInfo.append(registerInfo)
-                        
-                    }
-                    
-                    if let postData = user["postData"] as? [String: AnyObject] {
-                        self.arrayOfPostData.append(postData)
-                        
-                    
-                    }
-                }
-                
-                
-            }
-            self.tableView.reloadData()
-        }
-        
-    }
- 
-  
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -166,45 +177,41 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
     }
 
     
+ 
+    
+    override func tableView(tableView: UITableView,
+        willDisplayCell cell: UITableViewCell,
+        forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        cell.separatorInset = UIEdgeInsetsZero
+         cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+       
+    }
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
+       
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
 
+        cell.selectionStyle = .None
+        
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
 
+        
+//        
+//        springScaleFrom(cell.genderLabel, 200, 200, 0.5, 0.5)
+//        
+//        springScaleFrom(cell.usernameLabel, 200, 200, 0.5, 0.5)
+//        springScaleFrom(cell.clubOrBarLabel, 200, 200, 0.5, 0.5)
+//        springScaleFrom(cell.timeLabel, 200, 200, 0.5, 0.5)
+//        
+//        springScaleFrom(cell.userImage, -100, 200, 0.5, 0.5)
+        
         var event = self.arrayOfEvents[indexPath.row]
         
-
-        /*
-        if let imageFile = registerInfo["imageFile"] as? PFFile {
-            imageFile.getDataInBackgroundWithBlock({
-                (imageData: NSData!, error: NSError!) in
-                if (error == nil) {x
-                    let image : UIImage = UIImage(data:imageData)!
-                    //image object implementation
-                    
-                    cell.userImage.image = image
-                }
-            })
-
-        }
-        */
-        
-//        if let interest = registerInfo["interests"] as? String {
-//            cell.interestsLabel.text = interest
-//        }
-        
-        if let username = event["creator_name"] as? String {
-            cell.usernameLabel.text = username
-        }
-        if let gender = event["creator_gender"] as? String {
-            
-            cell.genderLabel.text = "Gender: \(gender)"
-            
-        }
-        
-    
         
         if let venue = event["venue"] as? String {
             
@@ -213,12 +220,12 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
             
         }
         
-//        if let seeking = postData["wingmanGender"] as? String {
-//            
-//            cell.seekingLabel.text = "Seeking: \(seeking)"
-//            
-//        }
-    
+        //        if let seeking = postData["wingmanGender"] as? String {
+        //
+        //            cell.seekingLabel.text = "Seeking: \(seeking)"
+        //
+        //        }
+        
         
         if let startTimeInt = event["start_time_string"] as? String {
             
@@ -231,26 +238,93 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
             
             
         }
-        
-        if let userInfo = event["user"] as? [String: AnyObject?] {
+
+    
+
+    
+    
+        if let userInfo = event["user"] as [String: AnyObject]? {
             
-            if let imageFile = userInfo["avatar_content_type"] {
-        
-          //      cell.userImage = imageFile
+            if let username = userInfo["username"] as? String {
+                cell.usernameLabel.text = username
+            }
+            if let gender = userInfo["gender"] as? String {
+                
+                cell.genderLabel.text = "Gender: \(gender)"
+                
+            }
+            
+            
+            if let imageFile = userInfo["avatar_content_type"] as? String {
+                
+                if let decodedData = NSData(base64EncodedString: imageFile, options: NSDataBase64DecodingOptions(rawValue: 0)) {
+                    var decodedImage = UIImage(data: decodedData)
+                    println(decodedImage)
+                    
+                    cell.userImage.image = decodedImage as UIImage!
+                }
+               
             }
         }
         
         
-        return cell
+                       //        if let seeking = postData["wingmanGender"] as? String {
+            //
+            //            cell.seekingLabel.text = "Seeking: \(seeking)"
+            //
+            //        }
+            
+        
+        
+            return cell
+
+            
+    
+        /*
+        if let imageFile = registerInfo["imageFile"] as? PFFile {
+        imageFile.getDataInBackgroundWithBlock({
+        (imageData: NSData!, error: NSError!) in
+        if (error == nil) {x
+        let image : UIImage = UIImage(data:imageData)!
+        //image object implementation
+        
+        cell.userImage.image = image
+        }
+        })
+        
+        }
+        */
+        
+        //        if let interest = registerInfo["interests"] as? String {
+        //            cell.interestsLabel.text = interest
+        //        }
+        
+        
         
     }
     
-    
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//       let cell: BrowseTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as BrowseTableViewCell
+    func didGetAllEvents(events: [[String: AnyObject]]) {
+        
 
-     //didn't connect segue in storyboard so doing it programmatically here
+        for event in events {
+            self.arrayOfEvents.append(event)
+        }
+        
+        self.tableView.reloadData()
+        
+    }
+    
+    func didNotGetAllEvents(error: String?) {
+        var alert:UIAlertView = UIAlertView(title: "Get Events Unsuccessful", message: error, delegate: nil, cancelButtonTitle: "Ok")
+        
+        alert.show()
+    }
+
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //       let cell: BrowseTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as BrowseTableViewCell
+        
+        //didn't connect segue in storyboard so doing it programmatically here
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewControllerWithIdentifier("browseDetailVC") as BrowseDetailViewController
         
@@ -264,40 +338,26 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
         */
         
         var event = self.arrayOfEvents[indexPath.row]
-
+        
         vc.event = event
         if let phoneNumber = event["creator_phone_number"] as? String {
             
             
             
-//            self.phoneNumber = phoneNumber
+            //            self.phoneNumber = phoneNumber
             vc.phoneNumber = phoneNumber
-           
+            
             
         }
         
         
         self.navigationController?.pushViewController(vc, animated: true)
         
+
         
-    }
-    
-    func didGetAllEvents(events: [[String: AnyObject]]) {
-        
-  
-        for event in events {
-            self.arrayOfEvents.append(event)
-        }
-        
-        self.tableView.reloadData()
         
     }
 
-    func didNotGetAllEvents(error: String?) {
-        var alert:UIAlertView = UIAlertView(title: "Get Events Unsuccessful", message: error, delegate: nil, cancelButtonTitle: "Ok")
-        
-        alert.show()
-    }
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        
 //        if segue.identifier == "phoneSegue" {
@@ -314,24 +374,5 @@ class BrowseTableViewController: UITableViewController, didGetEventsProtocol {
 //    }
     
     
-    @IBAction func Logout(sender: AnyObject) {
-        
-        User.currentUser().token = nil
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
-        
-
-        //presents LoginViewController without tabbar at bottom
-        self.presentViewController(nc, animated: true, completion: nil)
-    }
-    
-
+   
    }
-
-
-
-/*
-
-
-*/

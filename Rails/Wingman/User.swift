@@ -130,12 +130,14 @@ class User {
                 
                 println(responseInfo)
                 
-                if let dataInfo: AnyObject = responseInfo!["user"] {
+                if let responseInfo: AnyObject = responseInfo as AnyObject? {
+                    println(responseInfo)
+                if let dataInfo: AnyObject = responseInfo["user"] {
                     if let token = dataInfo["authentication_token"] as? String {
                         self.token = token
                     }
                     
-                    if let userId = responseInfo!["user_id"] as? Int {
+                    if let userId = responseInfo["user_id"] as? Int {
                         self.userId = userId
                         
                         self.registerDelegate?.update()
@@ -146,12 +148,12 @@ class User {
                     
                 else {
                    
-                    self.registerDelegate?.signInUnsuccesful(responseInfo!.description)
+                    self.registerDelegate?.signInUnsuccesful(responseInfo.description)
                 }
             }
             
             // do something here after request is done
-            
+            }
         })
 }
 
@@ -174,6 +176,8 @@ class User {
         
         // responseInfo will be set at the end of the requestwithoptions function: (completion: requestWithoptions), then we will print responseInfo
         APIRequest.requestWithOptions(options, andCompletion: { (responseInfo, error) -> () in
+            
+         
             if error != nil {
                 
                 println("Error != nil")
@@ -181,36 +185,40 @@ class User {
             }
             else {
                 
-                println(responseInfo!)
-                
-                if let dataInfo: AnyObject = responseInfo!["user"] {
-                    if let token = dataInfo["authentication_token"] as? String {
-                        self.token = token
-                        self.loginDelegate?.goToApp()
-                        
-                        /*
-                        
-                        if let userId = responseInfo!["user_id"] as? Int {
-                        self.userId = userId
-                        
-                        self.loginDelegate?.goToApp()
-                        
+              
+                   println("WHAT")
+                if let responseInfo: AnyObject = responseInfo as AnyObject? {
+                      println(responseInfo)
+                    if let dataInfo: AnyObject = responseInfo["user"] {
+                        if let token = dataInfo["authentication_token"] as? String {
+                            self.token = token
+                            self.loginDelegate?.goToApp()
+                            
+                            /*
+                            
+                            if let userId = responseInfo!["user_id"] as? Int {
+                            self.userId = userId
+                            
+                            self.loginDelegate?.goToApp()
+                            
+                            }
+                            
+                            */
+                            
                         }
                         
-                        */
-
+                        
+                        
+                        
+                    }
+                        
+                    else {
+                        
+                        println("No data Info")
+                        
+                        self.loginDelegate?.signInUnsuccesful(responseInfo.description)
                     }
 
-
-                    
-                    
-                }
-
-                else {
-                    
-                    println("No data Info")
-                    
-                    self.loginDelegate?.signInUnsuccesful(responseInfo!.description)
                 }
             }
             
@@ -219,7 +227,7 @@ class User {
         })
 }
     
-    func update(gender: String, interests: String, userId: Int) {
+    func update(gender: String, interests: String, userId: Int, imageFile: String) {
         
         println("THIS SHOULD BE OUR USERID: \(userId)")
         println("THIS SHOULD BE OUR TOKEN: \(self.token)")
@@ -231,7 +239,8 @@ class User {
             "method": "PUT",
             "body": [
                 
-                "user": [ "gender": gender, "interests": interests]
+                "user": [ "gender": gender, "interests": interests, "avatar": imageFile]
+               // "user": [ "gender": gender, "interests": interests, "avatar": userImage]
                 
                 
             ]
@@ -246,28 +255,32 @@ class User {
                 self.loginDelegate?.signInUnsuccesful(error!)
             } else {
                 
-                println(responseInfo!)
-                if let dataInfo: AnyObject = responseInfo!["user"] {
-                  
+                if let responseInfo: AnyObject = responseInfo as AnyObject? {
+                    println(responseInfo)
+                    
+                    
+                    if let dataInfo: AnyObject = responseInfo["user"] {
+                        
                         println("Successful")
-                    
-                    self.loginDelegate?.goToApp()
-                    
-                    
-                   
-                    
-                } else {
-                    
-                    println("Error")
-                    
+                        
+                        self.loginDelegate?.goToApp()
+                        
+                        
+                        
+                        
+                    } else {
+                        
+                        println("Error")
+                        
+                    }
                 }
+                
             }
-            
             // do something here after request is done
             
         })
     }
-
+    
     
     func postEvent(venueName: String, latitude: Float, longitude: Float, startTime: String, endTime: String, wingmanGender: String) {
         
@@ -292,8 +305,11 @@ class User {
                self.postEventDelegate?.didNotReceiveEvent(error)
             } else {
                 
-                println(responseInfo!)
-                if let dataInfo: AnyObject = responseInfo!["event"] {
+                
+                if let responseInfo: AnyObject = responseInfo as AnyObject? {
+                    println(responseInfo)
+           
+                if let dataInfo: AnyObject = responseInfo["event"] {
                     
                     println("Successful")
                      self.postEventDelegate?.didReceiveEvent()
@@ -305,13 +321,13 @@ class User {
                 } else {
                     
                     println("Error")
-                    self.postEventDelegate?.didNotReceiveEvent(responseInfo?.description)
+                    self.postEventDelegate?.didNotReceiveEvent(responseInfo.description)
                     
                 }
             }
             
             // do something here after request is done
-            
+            }
         })
         
     }
@@ -341,9 +357,11 @@ class User {
             }
             else {
                 
-                println(responseInfo!)
+                if let responseInfo: AnyObject = responseInfo as AnyObject? {
+                    println(responseInfo)
+              
                 
-                if let dataInfo: AnyObject = responseInfo!["events"] {
+                if let dataInfo: AnyObject = responseInfo["events"] {
                     
                     if let events = dataInfo as? [[String: AnyObject]] {
                         
@@ -362,10 +380,10 @@ class User {
                 }
                     
                 else {
-                    self.getEventsDelegate?.didNotGetAllEvents(responseInfo?.description)
+                    self.getEventsDelegate?.didNotGetAllEvents(responseInfo.description)
                 }
             }
-            
+            }
             // do something here after request is done
             
         })

@@ -9,27 +9,12 @@
 import UIKit
 import CoreLocation
 
-
-//let api = FourSquareAPI()
-//let lManager = CLLocationManager()
-
 var lastUpdated: NSDate?
-
-//var venues = [ClubOrBarVenues]()
-
-//FoursquareAPIProtocol
-//UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate
-
-
-
-
 
 class PostViewController: UIViewController, didChooseVenueProtocol, didPostEventProtocol {
         
     var postData = [String:AnyObject]()
     var clubOrBar: ClubOrBarVenues?
-    
-   // @IBOutlet weak var pickerClubBar: UIPickerView!
     
     @IBOutlet weak var venueChoiceLabel: UILabel!
     
@@ -44,16 +29,33 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
     
     @IBOutlet weak var phoneNumber: UITextField!
     
+    @IBOutlet weak var backgroundMaskView: UIView!
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var chooseBarButton: UIButton!
+    
+    @IBOutlet weak var postButton: UIButton!
+    
+    @IBOutlet weak var postImageView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var tabBarImageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        User.currentUser().postEventDelegate = self
+         User.currentUser().postEventDelegate = self
         self.tabBarController?.tabBar.hidden = false
         // Do any additional setup after loading the view.
         
 //        pickerClubBar.dataSource = self
 //        pickerClubBar.delegate = self
 //        pickerClubBar.backgroundColor = UIColor.clearColor()
+        
+     
+    //   insertBlurView(backgroundMaskView, UIBlurEffectStyle.Dark)
         
         
         postData["wingmanGender"] = "female"
@@ -71,11 +73,29 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
             
         }*/
         
+        tabBarImageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
         
+        
+        tabBarImageView!.clipsToBounds = true
+        
+        tabBarImageView!.contentMode = .ScaleAspectFill
+        
+        tabBarImageView!.hidden = true
+        let image = UIImage(named: "bar")
+        tabBarImageView!.image = image
+        navigationItem.titleView = tabBarImageView
+
     }
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
+        
+        self.postButton.hidden = true
+        self.chooseBarButton.hidden = true
+        
+        self.postImageView.hidden = true
+        
+        self.imageView.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -88,18 +108,60 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
         //"You chose: " label stuff here
         //venueChoiceLabel.text = "You chose: \()"
         
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, -100)
+        self.chooseBarButton.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        tabBarImageView!.hidden = false
+        springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
+        
+      
+        
+        spring(1) {
+            
+            self.chooseBarButton.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.chooseBarButton.transform = CGAffineTransformConcat(scale, translate)
+        }
+        
+        // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(0, 100)
+        self.postButton.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        self.postImageView.transform = CGAffineTransformConcat(scale2, translate2)
+        self.imageView.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            self.postButton.hidden = false
+            self.postImageView.hidden = false
+            self.imageView.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.postButton.transform = CGAffineTransformConcat(scale, translate)
+            self.postImageView.transform = CGAffineTransformConcat(scale, translate)
+            self.imageView.transform = CGAffineTransformConcat(scale, translate)
+            
+            
+        }
+        
+ 
+
+        
     }
     
     @IBAction func submitPostButton(sender: AnyObject) {
         
       
         
-        
         if postData["clubOrBar"] != nil && startTime.text != "" && endTime.text != "" && phoneNumber.text != ""
             
         {
             
-           
+            
             
             
             postData["startTime"] = startTime.text.toInt()
@@ -120,13 +182,13 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
             var wingmanGender = postData["wingmanGender"] as String
             User.currentUser().postEvent(venueName, latitude: latitude, longitude: longitude, startTime: startTime.text,  endTime: endTime.text, wingmanGender: wingmanGender)
             
-        
+            
             
             // for protocol
-                
             
-
-                
+            
+            
+            
             
             
         }
@@ -181,12 +243,6 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
         
         var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
         
-        
-        tbc?.tabBar.tintColor = UIColor.whiteColor()
-        
-        
-        tbc?.tabBar.barStyle = UIBarStyle.Black
-        
         println(tbc)
         
         UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
@@ -230,34 +286,9 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
         }
         
     }
-    
-    func didReceiveVenueChoice(venue: ClubOrBarVenues) {
-        
-            postData["clubOrBar"] = venue
-        
-        var venueName = venue.name
-        
-    
-        venueChoiceLabel.text = "You chose:\n\(venueName)"
-      
-        
-    }
+
 
     
-    func didReceiveEvent() {
-        
-        self.showAlert()
-        
-        
-        self.goToBrowseTableVC()
-
-    }
-    
-     func didNotReceiveEvent(error: String?) {
-        var alert:UIAlertView = UIAlertView(title: "Post Event Unsuccessful", message: error, delegate: nil, cancelButtonTitle: "Ok")
-        
-        alert.show()
-    }
     /*
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -315,11 +346,62 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
     }
     */
     
+    
+    func didReceiveVenueChoice(venue: ClubOrBarVenues) {
+        
+        postData["clubOrBar"] = venue
+        
+        var venueName = venue.name
+        
+        
+        venueChoiceLabel.text = "You chose:\n\(venueName)"
+        
+        chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
+        
+        
+    }
+    
+    
+    func didReceiveEvent() {
+        
+        self.showAlert()
+        
+        
+        self.goToBrowseTableVC()
+        
+    }
+    
+    func didNotReceiveEvent(error: String?) {
+        var alert:UIAlertView = UIAlertView(title: "Post Event Unsuccessful", message: error, delegate: nil, cancelButtonTitle: "Ok")
+        
+        alert.show()
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }
+    
+    @IBAction func logout(sender: AnyObject) {
+        
+        
+        let user = PFUser.currentUser() as PFUser
+        
+        PFUser.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        
+        
+        //presents LoginViewController without tabbar at bottom
+        self.presentViewController(nc, animated: true, completion: nil)
+        
+    }
+    
+    
     
     /*
     

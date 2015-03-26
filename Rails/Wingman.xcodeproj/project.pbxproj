@@ -12,7 +12,6 @@
 		29775D371AA3D45800A56925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775D361AA3D45800A56925 /* AppDelegate.swift */; };
 		29775D391AA3D45800A56925 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775D381AA3D45800A56925 /* LoginViewController.swift */; };
 		29775D3C1AA3D45800A56925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29775D3A1AA3D45800A56925 /* Main.storyboard */; };
-		29775D3E1AA3D45800A56925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29775D3D1AA3D45800A56925 /* Images.xcassets */; };
 		29775D411AA3D45800A56925 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29775D3F1AA3D45800A56925 /* LaunchScreen.xib */; };
 		29775D4D1AA3D45800A56925 /* WingmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775D4C1AA3D45800A56925 /* WingmanTests.swift */; };
 		29775DAC1AA4F26800A56925 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29775DA71AA4F26800A56925 /* Bolts.framework */; };
@@ -34,12 +33,39 @@
 		29775DCB1AA4FD6E00A56925 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */; };
 		29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */; };
 		29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29775E321AA7F27F00A56925 /* PostViewController.swift */; };
+		2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */; };
+		2980CDAD1AC06818005A4A7D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDAC1AC06818005A4A7D /* Icon.png */; };
 		29A075981ABB711E00204989 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A075971ABB711E00204989 /* PickerViewController.swift */; };
-		29A0759E1ABD16E200204989 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0759D1ABD16E200204989 /* APIRequest.swift */; };
-		29A075A01ABD193C00204989 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0759F1ABD193C00204989 /* User.swift */; };
+		29E637801AC059BB009B5241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E6377F1AC059BB009B5241 /* Images.xcassets */; };
+		BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */; };
+		BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC21AC0ABBF009FC1F0 /* Data.swift */; };
+		BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */; };
+		BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC41AC0ABBF009FC1F0 /* Misc.swift */; };
+		BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */; };
+		BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */; };
+		BD080DD01AC1AB0F009FC1F0 /* club-scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */; };
+		BD080DD21AC1AD6E009FC1F0 /* Club.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD11AC1AD6E009FC1F0 /* Club.jpg */; };
+		BD080DD51AC1D229009FC1F0 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD31AC1D229009FC1F0 /* backbutton.png */; };
+		BD080DD61AC1D229009FC1F0 /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */; };
+		BD080DD81AC1EE66009FC1F0 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */; };
+		BD080DDA1AC1FE33009FC1F0 /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DD91AC1FE33009FC1F0 /* pushpin.png */; };
+		BD080DDC1AC1FE73009FC1F0 /* glass.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DDB1AC1FE73009FC1F0 /* glass.png */; };
+		BD080DDE1AC2021E009FC1F0 /* miso-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD080DDD1AC20219009FC1F0 /* miso-regular.otf */; };
+		BD080DE91AC23BB5009FC1F0 /* nonic-pint-01-01-01.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE51AC23BB5009FC1F0 /* nonic-pint-01-01-01.png */; };
+		BD080DEA1AC23BB5009FC1F0 /* 59427-200.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE61AC23BB5009FC1F0 /* 59427-200.png */; };
+		BD080DEB1AC23BB5009FC1F0 /* empty-wine-glass-md.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */; };
+		BD080DEC1AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */; };
+		BD080DEE1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */; };
+		BD080DF51AC252D8009FC1F0 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DF41AC252D8009FC1F0 /* bar.png */; };
 		BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */; };
 		BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD53079E1AA9702200D8DBBB /* defaultimage.jpg */; };
 		BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */; };
+		BD58C2B31AC49CB9004490E3 /* S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58C2B21AC49CB9004490E3 /* S3.swift */; };
+		BD58C2BB1AC49D15004490E3 /* AFAmazonS3Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD58C2B61AC49D15004490E3 /* AFAmazonS3Manager.m */; };
+		BD58C2BC1AC49D15004490E3 /* AFAmazonS3RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BD58C2B81AC49D15004490E3 /* AFAmazonS3RequestSerializer.m */; };
+		BD58C2BD1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BD58C2BA1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m */; };
+		BDD10D891AC34F2B00FEA47A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD10D881AC34F2B00FEA47A /* User.swift */; };
+		BDD10D8B1AC34F3300FEA47A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD10D8A1AC34F3300FEA47A /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +81,13 @@
 /* Begin PBXFileReference section */
 		293044EB1AAF569600A793FC /* FourSquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareAPI.swift; sourceTree = "<group>"; };
 		293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubOrBarVenues.swift; sourceTree = "<group>"; };
-		29775D311AA3D45800A56925 /* RailsWingma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsWingma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29775D311AA3D45800A56925 /* Wingman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wingman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29775D351AA3D45800A56925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29775D361AA3D45800A56925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29775D381AA3D45800A56925 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Wingman/LoginViewController.swift; sourceTree = "<group>"; };
 		29775D3B1AA3D45800A56925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29775D3D1AA3D45800A56925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29775D401AA3D45800A56925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		29775D461AA3D45800A56925 /* RailsWingmaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RailsWingmaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29775D461AA3D45800A56925 /* WingmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WingmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29775D4B1AA3D45800A56925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29775D4C1AA3D45800A56925 /* WingmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTests.swift; sourceTree = "<group>"; };
 		29775DA71AA4F26800A56925 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -85,12 +110,42 @@
 		29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Wingman/RegisterViewController.swift; sourceTree = "<group>"; };
 		29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewController.swift; path = Wingman/BrowseTableViewController.swift; sourceTree = "<group>"; };
 		29775E321AA7F27F00A56925 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = Wingman/PostViewController.swift; sourceTree = "<group>"; };
+		2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
+		2980CDAC1AC06818005A4A7D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		29A075971ABB711E00204989 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
-		29A0759D1ABD16E200204989 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		29A0759F1ABD193C00204989 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29E6377F1AC059BB009B5241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		BD080DC21AC0ABBF009FC1F0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		BD080DC41AC0ABBF009FC1F0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "club-scene.jpg"; sourceTree = "<group>"; };
+		BD080DD11AC1AD6E009FC1F0 /* Club.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Club.jpg; sourceTree = "<group>"; };
+		BD080DD31AC1D229009FC1F0 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@2x.png"; sourceTree = "<group>"; };
+		BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		BD080DD91AC1FE33009FC1F0 /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		BD080DDB1AC1FE73009FC1F0 /* glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass.png; sourceTree = "<group>"; };
+		BD080DDD1AC20219009FC1F0 /* miso-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-regular.otf"; sourceTree = "<group>"; };
+		BD080DE51AC23BB5009FC1F0 /* nonic-pint-01-01-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nonic-pint-01-01-01.png"; sourceTree = "<group>"; };
+		BD080DE61AC23BB5009FC1F0 /* 59427-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59427-200.png"; sourceTree = "<group>"; };
+		BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-wine-glass-md.png"; sourceTree = "<group>"; };
+		BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wine-glass-silhouette-black-and-white-md.png"; sourceTree = "<group>"; };
+		BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beer-mug-black-and-white-hi.png"; sourceTree = "<group>"; };
+		BD080DF41AC252D8009FC1F0 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewCell.swift; path = Wingman/BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BD53079E1AA9702200D8DBBB /* defaultimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = defaultimage.jpg; path = Wingman/defaultimage.jpg; sourceTree = "<group>"; };
 		BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseDetailViewController.swift; path = Wingman/BrowseDetailViewController.swift; sourceTree = "<group>"; };
+		BD58C2B21AC49CB9004490E3 /* S3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3.swift; sourceTree = "<group>"; };
+		BD58C2B51AC49D15004490E3 /* AFAmazonS3Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAmazonS3Manager.h; sourceTree = "<group>"; };
+		BD58C2B61AC49D15004490E3 /* AFAmazonS3Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAmazonS3Manager.m; sourceTree = "<group>"; };
+		BD58C2B71AC49D15004490E3 /* AFAmazonS3RequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAmazonS3RequestSerializer.h; sourceTree = "<group>"; };
+		BD58C2B81AC49D15004490E3 /* AFAmazonS3RequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAmazonS3RequestSerializer.m; sourceTree = "<group>"; };
+		BD58C2B91AC49D15004490E3 /* AFAmazonS3ResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAmazonS3ResponseSerializer.h; sourceTree = "<group>"; };
+		BD58C2BA1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAmazonS3ResponseSerializer.m; sourceTree = "<group>"; };
+		BDD10D881AC34F2B00FEA47A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BDD10D8A1AC34F3300FEA47A /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +196,8 @@
 		29775D321AA3D45800A56925 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29775D311AA3D45800A56925 /* RailsWingma.app */,
-				29775D461AA3D45800A56925 /* RailsWingmaTests.xctest */,
+				29775D311AA3D45800A56925 /* Wingman.app */,
+				29775D461AA3D45800A56925 /* WingmanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,13 +205,13 @@
 		29775D331AA3D45800A56925 /* Wingman */ = {
 			isa = PBXGroup;
 			children = (
+				BDD10D881AC34F2B00FEA47A /* User.swift */,
+				BDD10D8A1AC34F3300FEA47A /* APIRequest.swift */,
+				BD58C2B21AC49CB9004490E3 /* S3.swift */,
 				29775D361AA3D45800A56925 /* AppDelegate.swift */,
-				29A0759D1ABD16E200204989 /* APIRequest.swift */,
-				29A0759F1ABD193C00204989 /* User.swift */,
 				293044EB1AAF569600A793FC /* FourSquareAPI.swift */,
 				293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */,
 				29775D3A1AA3D45800A56925 /* Main.storyboard */,
-				29775D3D1AA3D45800A56925 /* Images.xcassets */,
 				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
 				BD5307A01AA9702700D8DBBB /* Images */,
 				29775D341AA3D45800A56925 /* Supporting Files */,
@@ -168,6 +223,7 @@
 		29775D341AA3D45800A56925 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */,
 				29775D351AA3D45800A56925 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -217,32 +273,76 @@
 		29FD51561AB4CA1100A0D7DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD58C2B41AC49D06004490E3 /* Amazon S3 */,
+				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
-				29775E321AA7F27F00A56925 /* PostViewController.swift */,
+				BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */,
 				29775DCE1AA639DB00A56925 /* BrowseTableViewController.swift */,
-				BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */,
 				BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */,
+				BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */,
+				29775E321AA7F27F00A56925 /* PostViewController.swift */,
 				29A075971ABB711E00204989 /* PickerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BD080DCB1AC0ABD4009FC1F0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */,
+				BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */,
+				BD080DC21AC0ABBF009FC1F0 /* Data.swift */,
+				BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */,
+				BD080DC41AC0ABBF009FC1F0 /* Misc.swift */,
+				BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
 		BD5307A01AA9702700D8DBBB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BD080DF41AC252D8009FC1F0 /* bar.png */,
+				BD080DE51AC23BB5009FC1F0 /* nonic-pint-01-01-01.png */,
+				BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */,
+				BD080DE61AC23BB5009FC1F0 /* 59427-200.png */,
+				BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */,
+				BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */,
+				BD080DDB1AC1FE73009FC1F0 /* glass.png */,
+				BD080DDD1AC20219009FC1F0 /* miso-regular.otf */,
+				BD080DD91AC1FE33009FC1F0 /* pushpin.png */,
+				BD080DCF1AC1AB0F009FC1F0 /* club-scene.jpg */,
+				BD080DD31AC1D229009FC1F0 /* backbutton.png */,
+				BD080DD41AC1D229009FC1F0 /* backbutton@2x.png */,
 				BD53079E1AA9702200D8DBBB /* defaultimage.jpg */,
+				BD080DD11AC1AD6E009FC1F0 /* Club.jpg */,
+				2980CDAC1AC06818005A4A7D /* Icon.png */,
+				29E6377F1AC059BB009B5241 /* Images.xcassets */,
 			);
 			name = Images;
 			path = ..;
 			sourceTree = "<group>";
 		};
+		BD58C2B41AC49D06004490E3 /* Amazon S3 */ = {
+			isa = PBXGroup;
+			children = (
+				BD58C2B51AC49D15004490E3 /* AFAmazonS3Manager.h */,
+				BD58C2B61AC49D15004490E3 /* AFAmazonS3Manager.m */,
+				BD58C2B71AC49D15004490E3 /* AFAmazonS3RequestSerializer.h */,
+				BD58C2B81AC49D15004490E3 /* AFAmazonS3RequestSerializer.m */,
+				BD58C2B91AC49D15004490E3 /* AFAmazonS3ResponseSerializer.h */,
+				BD58C2BA1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m */,
+			);
+			name = "Amazon S3";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29775D301AA3D45800A56925 /* RailsWingman */ = {
+		29775D301AA3D45800A56925 /* Wingman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29775D501AA3D45800A56925 /* Build configuration list for PBXNativeTarget "RailsWingman" */;
+			buildConfigurationList = 29775D501AA3D45800A56925 /* Build configuration list for PBXNativeTarget "Wingman" */;
 			buildPhases = (
 				29775D2D1AA3D45800A56925 /* Sources */,
 				29775D2E1AA3D45800A56925 /* Frameworks */,
@@ -252,14 +352,14 @@
 			);
 			dependencies = (
 			);
-			name = RailsWingman;
+			name = Wingman;
 			productName = Wingman;
-			productReference = 29775D311AA3D45800A56925 /* RailsWingma.app */;
+			productReference = 29775D311AA3D45800A56925 /* Wingman.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29775D451AA3D45800A56925 /* RailsWingmanTests */ = {
+		29775D451AA3D45800A56925 /* WingmanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29775D531AA3D45800A56925 /* Build configuration list for PBXNativeTarget "RailsWingmanTests" */;
+			buildConfigurationList = 29775D531AA3D45800A56925 /* Build configuration list for PBXNativeTarget "WingmanTests" */;
 			buildPhases = (
 				29775D421AA3D45800A56925 /* Sources */,
 				29775D431AA3D45800A56925 /* Frameworks */,
@@ -270,9 +370,9 @@
 			dependencies = (
 				29775D481AA3D45800A56925 /* PBXTargetDependency */,
 			);
-			name = RailsWingmanTests;
+			name = WingmanTests;
 			productName = WingmanTests;
-			productReference = 29775D461AA3D45800A56925 /* RailsWingmaTests.xctest */;
+			productReference = 29775D461AA3D45800A56925 /* WingmanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -286,6 +386,7 @@
 				TargetAttributes = {
 					29775D301AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = XCU2F2Y374;
 					};
 					29775D451AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -306,8 +407,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29775D301AA3D45800A56925 /* RailsWingman */,
-				29775D451AA3D45800A56925 /* RailsWingmanTests */,
+				29775D301AA3D45800A56925 /* Wingman */,
+				29775D451AA3D45800A56925 /* WingmanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,10 +418,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD080DEA1AC23BB5009FC1F0 /* 59427-200.png in Resources */,
+				BD080DDE1AC2021E009FC1F0 /* miso-regular.otf in Resources */,
 				29775D3C1AA3D45800A56925 /* Main.storyboard in Resources */,
+				BD080DD61AC1D229009FC1F0 /* backbutton@2x.png in Resources */,
+				2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */,
+				BD080DD01AC1AB0F009FC1F0 /* club-scene.jpg in Resources */,
+				BD080DF51AC252D8009FC1F0 /* bar.png in Resources */,
+				BD080DE91AC23BB5009FC1F0 /* nonic-pint-01-01-01.png in Resources */,
+				29E637801AC059BB009B5241 /* Images.xcassets in Resources */,
 				29775D411AA3D45800A56925 /* LaunchScreen.xib in Resources */,
-				29775D3E1AA3D45800A56925 /* Images.xcassets in Resources */,
+				BD080DDC1AC1FE73009FC1F0 /* glass.png in Resources */,
+				BD080DEE1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png in Resources */,
+				BD080DD21AC1AD6E009FC1F0 /* Club.jpg in Resources */,
+				BD080DEC1AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png in Resources */,
+				BD080DD51AC1D229009FC1F0 /* backbutton.png in Resources */,
+				2980CDAD1AC06818005A4A7D /* Icon.png in Resources */,
 				BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */,
+				BD080DEB1AC23BB5009FC1F0 /* empty-wine-glass-md.png in Resources */,
+				BD080DDA1AC1FE33009FC1F0 /* pushpin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,17 +454,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A075A01ABD193C00204989 /* User.swift in Sources */,
 				29775DCB1AA4FD6E00A56925 /* RegisterViewController.swift in Sources */,
 				29775D391AA3D45800A56925 /* LoginViewController.swift in Sources */,
 				29775D371AA3D45800A56925 /* AppDelegate.swift in Sources */,
+				BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */,
 				293044EE1AAF619400A793FC /* ClubOrBarVenues.swift in Sources */,
+				BD58C2B31AC49CB9004490E3 /* S3.swift in Sources */,
+				BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */,
+				BDD10D8B1AC34F3300FEA47A /* APIRequest.swift in Sources */,
+				BD58C2BC1AC49D15004490E3 /* AFAmazonS3RequestSerializer.m in Sources */,
+				BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */,
 				29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */,
+				BD58C2BD1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m in Sources */,
 				29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */,
+				BD58C2BB1AC49D15004490E3 /* AFAmazonS3Manager.m in Sources */,
+				BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */,
 				29A075981ABB711E00204989 /* PickerViewController.swift in Sources */,
+				BD080DD81AC1EE66009FC1F0 /* RootNavigationController.swift in Sources */,
 				293044EC1AAF569600A793FC /* FourSquareAPI.swift in Sources */,
+				BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */,
+				BDD10D891AC34F2B00FEA47A /* User.swift in Sources */,
+				BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */,
 				BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */,
-				29A0759E1ABD16E200204989 /* APIRequest.swift in Sources */,
 				BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +493,7 @@
 /* Begin PBXTargetDependency section */
 		29775D481AA3D45800A56925 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29775D301AA3D45800A56925 /* RailsWingman */;
+			target = 29775D301AA3D45800A56925 /* Wingman */;
 			targetProxy = 29775D471AA3D45800A56925 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -473,13 +600,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Wingman",
 				);
 				INFOPLIST_FILE = Wingman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = RailsWingma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wingman/Wingman-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -490,13 +618,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Wingman",
 				);
 				INFOPLIST_FILE = Wingman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = RailsWingma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wingman/Wingman-Bridging-Header.h";
 			};
 			name = Release;
@@ -515,8 +644,8 @@
 				);
 				INFOPLIST_FILE = WingmanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = RailsWingmaTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RailsWingma.app/RailsWingma";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wingman.app/Wingman";
 			};
 			name = Debug;
 		};
@@ -530,8 +659,8 @@
 				);
 				INFOPLIST_FILE = WingmanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = RailsWingmaTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RailsWingma.app/RailsWingma";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wingman.app/Wingman";
 			};
 			name = Release;
 		};
@@ -547,7 +676,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29775D501AA3D45800A56925 /* Build configuration list for PBXNativeTarget "RailsWingman" */ = {
+		29775D501AA3D45800A56925 /* Build configuration list for PBXNativeTarget "Wingman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29775D511AA3D45800A56925 /* Debug */,
@@ -556,7 +685,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29775D531AA3D45800A56925 /* Build configuration list for PBXNativeTarget "RailsWingmanTests" */ = {
+		29775D531AA3D45800A56925 /* Build configuration list for PBXNativeTarget "WingmanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29775D541AA3D45800A56925 /* Debug */,

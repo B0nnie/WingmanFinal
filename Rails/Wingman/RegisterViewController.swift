@@ -9,6 +9,8 @@
 import UIKit
 @IBDesignable
 
+
+
 class RegisterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, SignedInProtocol
 
 {
@@ -17,12 +19,24 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     let segments = ["male", "female"]
     
-   // var user = PFUser()
+    
     var registerInfo = [String:AnyObject]()
     
+    var myCustomBackButtonItem: UIBarButtonItem?
+    
+    var customButton: UIButton?
+    
+    
+    var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        pickProfilePicButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlState.Highlighted)
+//        
+    
+    
+         User.currentUser().registerDelegate  = self
         
         self.registerInfo["gender"] = "male"
         
@@ -30,12 +44,137 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
-        User.currentUser().registerDelegate  = self
+        
+        var nav = self.navigationController?.navigationBar
+        
+        customButton = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
+        customButton!.setBackgroundImage(UIImage(named: "backbutton"), forState: UIControlState.Normal)
+        
+
+        customButton!.sizeToFit()
+        
+        customButton!.hidden = true
+        customButton!.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        myCustomBackButtonItem = UIBarButtonItem(customView: customButton!)
+        
+        
+        
+        self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
+        
+        imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView!.clipsToBounds = true
+        
+        imageView!.contentMode = .ScaleAspectFill
+        
+        imageView!.hidden = true
+        let image = UIImage(named: "bar")
+
+        imageView!.image = image
+        navigationItem.titleView = imageView
+
+
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.imageView!.hidden = true
+
+
+        self.createUsernameField.hidden = true
+        self.createPasswordField.hidden = true
+        self.enterEmailField.hidden = true
+        
+        self.pickedImage.hidden = true
+        
+        
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let token = User.currentUser().token {
+     
+        customButton!.hidden = false
+         self.imageView!.hidden = false
+         springScaleFrom(customButton!, -100, 0, 0.5, 0.5)
+ 
+  
+
+
+        springScaleFrom(imageView!, 200, 0, 0.5, 0.5)
+       
+        self.logoImageView.layer.cornerRadius = 50
+        self.logoImageView.clipsToBounds = true
+        
+        // animate the logoImageView
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, -100)
+        self.createUsernameField.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        spring(1) {
+     
+            self.createUsernameField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.createUsernameField.transform = CGAffineTransformConcat(scale, translate)
+        }
+        
+        // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(0, -100)
+        self.enterEmailField.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            self.enterEmailField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.enterEmailField.transform = CGAffineTransformConcat(scale, translate)
+       
+            
+        }
+        
+        var scale3 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate3 = CGAffineTransformMakeTranslation(0, -100)
+        self.createPasswordField.transform = CGAffineTransformConcat(scale3, translate3)
+        
+        spring(1) {
+            self.createPasswordField.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.createPasswordField.transform = CGAffineTransformConcat(scale, translate)
+       
+            
+        }
+
+        
+        var scale4 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate4 = CGAffineTransformMakeTranslation(0, 200)
+        self.pickedImage.transform = CGAffineTransformConcat(scale4, translate4)
+        
+        spring(1) {
+            self.pickedImage.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.pickedImage.transform = CGAffineTransformConcat(scale, translate)
+            
+            
+        }
+        
+        if pickProfilePicButton.highlighted == true {
+            pickProfilePicButton.backgroundColor = UIColor.blueColor()
+            
+        }
+            
+        if pickProfilePicButton.highlighted == false{
+            pickProfilePicButton.backgroundColor = UIColor.clearColor()
+        }
+
+        
+        if let token = User.currentUser().token  {
             
             
             var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
@@ -58,7 +197,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
 //        self.navigationController?.navigationBar.tintColor = UIColor.clearColor()
 //        
 //         self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-        
+//        
          self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
          self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -68,6 +207,17 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
+    
+    func buttonClicked(sender:UIButton)
+    {
+        if sender.highlighted {
+            sender.backgroundColor = UIColor.blueColor()
+  
+        }
+    }
+
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -111,11 +261,19 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         // image to data
         
-        let imageData = UIImagePNGRepresentation(resizedImage)
+       
+        
+        //OR with path
+//        var url:NSURL = NSURL(string : "urlHere")!
+//        var imageData:NSData = NSData(contentsOfURL: url, options: nil, error: nil)!
         
         // data to pffile
-        let imageFile = PFFile(name: "image.png", data: imageData)
+
    
+        let imageData = UIImagePNGRepresentation(resizedImage)
+        
+        let imageFile = imageData.base64EncodedStringWithOptions(.allZeros)
+        
         registerInfo["imageFile"] = imageFile
         
         
@@ -123,6 +281,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         picker.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
     
     func resizeImage(original : UIImage, toSize size:CGSize) -> UIImage
     {
@@ -152,16 +311,30 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         return resizedImage
     }
-    
-    func signInUnsuccesful(error: String) {
-        
-        
-        var alert:UIAlertView = UIAlertView(title: "Error", message: error, delegate: nil, cancelButtonTitle: "Ok")
-        
-        alert.show()
-    }
    
+//    func resizeImage(orignalImage: UIImage, withSize: CGSize) {
+//        
+//        var scale : Float = if(originalImage.size.height > originalImage.size.width) {  size.width / originalImage.size.width } else { size.height / originalImage.size.height}
+    
+    
+        
+        /*
+    -(UIImage *)resizeImage:(UIImage *) originalImage withSize: (CGSize)size {
+    
+    float scale = (originalImage.size.height > originalImage.size.width) ?  size.width / originalImage.size.width : size.height / originalImage.size.height;
+    
+    CGSize ratioSize = CGSizeMake(originalImage.size.width * scale, originalImage.size.height * scale);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    [originalImage drawInRect:CGRectMake(0, 0, ratioSize.width, ratioSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+    
+    }
 
+    */
   
     
     
@@ -170,6 +343,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var enterEmailField: UITextField!
     
     @IBOutlet weak var createPasswordField: UITextField!
+    
+    @IBOutlet weak var pickProfilePicButton: UIButton!
+    
+    
+    @IBOutlet weak var logoImageView: UIImageView!
     
     @IBAction func genderSC(sender: UISegmentedControl) {
         
@@ -189,18 +367,83 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             
         }
         
+//        var segmentedControl: UISegmentedControl!
+//        let selectedSegmentIndex = sender.selectedSegmentIndex
+//        
+//        let selectedSegmentText = sender.titleForSegmentAtIndex(selectedSegmentIndex)
+//        
+//        let segments = ["Male", "Female"]
+//        
+//        segmentedControl = UISegmentedControl(items: segments)
+//        
+//        segmentedControl.addTarget(self, action: "segmentedControlValueChanged:", forControlEvents: .ValueChanged)
+//        
+//        
+//
+//        
+//        
+//        println("Segment \(selectedSegmentIndex) with text of" + " \(selectedSegmentText) is selected")
         
     }
 
     @IBOutlet @IBInspectable  weak var interestField: UITextView!
     
+    func popToRoot(sender:UIBarButtonItem) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func goToApp() {
+        
+        
+        var tbc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
+        
+        tbc?.tabBar.tintColor = UIColor.whiteColor()
+        
+        
+        tbc?.tabBar.barStyle = UIBarStyle.Black
+        
+        println(tbc)
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
+        
+    }
+    
+    func signInUnsuccesful(error: String) {
+        
+        
+        var alert:UIAlertView = UIAlertView(title: "Error", message: error, delegate: nil, cancelButtonTitle: "Ok")
+        
+        alert.show()
+    }
+    
+    func update() {
+        
+        var gender = registerInfo["gender"] as String
+        
+        var imageFile = registerInfo["imageFile"] as String
+        
+        if let userId = User.currentUser().userId {
+            User.currentUser().update(gender, interests: self.interestField.text, userId: userId, imageFile: imageFile)
+        }
+        
+    }
+    
+    
     
     @IBAction func signUp(sender: AnyObject) {
+
         
-//        user.username = createUsernameField.text
-//        user.password = createPasswordField.text
-//        user.email = enterEmailField.text
+  
+        //how to take results from func genderSC and put it here?
+      
+       // user["gender"] = String(genderSC(UISegmentedControl(items: segments)))
         
+        //how to save a pic in Parse?
+        //user["profile pic"] =
+       //user["interests"] = interestField[] or .text
+        
+        // other fields can be set just like with PFObject
+        //user["phone"] = "415-392-0202"
         
         var fieldValues: [String] = [createUsernameField.text, createPasswordField.text, enterEmailField.text, interestField.text] //interestField.text
         
@@ -225,129 +468,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             registerInfo["username"] = self.createUsernameField.text
             registerInfo["interests"] = self.interestField.text
             
+            registerInfo["username"] = self.createUsernameField.text
+            registerInfo["interests"] = self.interestField.text
+            
             User.currentUser().signUp(createUsernameField.text, email: enterEmailField.text, password: createPasswordField.text)
-            
-            
-            
-            
-            /*
-            user.signUpInBackgroundWithBlock {
-                (succeeded: Bool!, error: NSError!) -> Void in
-                if error == nil {
-                    // Hooray! Let them use the app now.
-                    
-                    
-                    
-                    self.saveInfoToParse()
-                    
-                 
-                 
-                    /*
-                    println(user)
-                    
-                    self.createUsernameField.text = ""
-                    self.createPasswordField.text = ""
-                    self.enterEmailField.text = ""
-                    //self.interestField.text = ""
-                   // self.genderSC(sender: UISegmentedControl(items: segments)) = ""
-                    
-                    */
-                }
-                else
-                {
-                    if let errorString = error.userInfo?["error"] as? NSString
-                    {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: "Ok")
-                        
-                        alert.show()
-                    }
-                        
-                    else {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: "Unable to create account" , delegate: nil, cancelButtonTitle: "Ok")
-                        
-                        alert.show()
-                        
-                    }
-                    
-
-                }
-
-            }
-*/
         }
-    }
     
-    func update() {
-        
-        var gender = registerInfo["gender"] as String
-        
-        if let userId = User.currentUser().userId {
-             User.currentUser().update(gender, interests: self.interestField.text, userId: userId)
-        }
-       
-     
-    }
     
-    func goToApp() {
-        
-        
-        var tbc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
-        
-        tbc?.tabBar.tintColor = UIColor.whiteColor()
-        
-        
-        tbc?.tabBar.barStyle = UIBarStyle.Black
-        
-        println(tbc)
-        
-        UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
-        
-    }
-    
-//    
-//    func saveInfoToParse() {
-//        
-//        
-//        var query = PFQuery(className:"_User")
-//        
-//        query.whereKey("objectId", equalTo: PFUser.currentUser().objectId)
-//        
-//        
-//        
-//        
-//        query.findObjectsInBackgroundWithBlock() {
-//            (objects:[AnyObject]!, error:NSError!)->Void in
-//            if ((error) == nil) {
-//                
-//                
-//                let user:PFUser =  objects.last as PFUser
-//                
-//                
-//                //this creates the registerInfo column in Parse
-//                user["registerInfo"] = self.registerInfo
-//                
-//                var gender = self.registerInfo["gender"] as String?
-//                user["gender"] = gender
-//                user.saveInBackground()
-//                
-//                
-//                var tbc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
-//                
-//                tbc?.tabBar.tintColor = UIColor.whiteColor()
-//                
-//                
-//                tbc?.tabBar.barStyle = UIBarStyle.Black
-//                
-//                println(tbc)
-//                
-//                UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
-//                
-//                
-//                    
-//                }
-//                
-//                }
-//            }
-    
+  }
 
 }

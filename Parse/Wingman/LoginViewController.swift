@@ -81,6 +81,8 @@ class LoginViewController: UIViewController {
          self.logoImageView.clipsToBounds = true
        
         self.imageView!.hidden = false
+        
+        
         springScaleFrom(self.imageView!, 0, -100, 0.5, 0.5)
         
         

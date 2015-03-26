@@ -11,29 +11,126 @@ import UIKit
 class LoginViewController: UIViewController, SignedInProtocol {
     
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    
+    var animator: UIDynamicAnimator!
+    var attachmentBehavior: UIAttachmentBehavior!
+    var gravityBehavior: UIGravityBehavior!
+    var snapBehavior: UISnapBehavior!
+    
+    
+    var imageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        //sets navigation bar to a clear black color
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
+    
+        
+        animator = UIDynamicAnimator(referenceView: view)
+        
+        self.logoImageView.layer.cornerRadius = 50
+        self.logoImageView.clipsToBounds = true
+        
+        
+    
+        
+       // hides navigation bar on LoginVC
+      //  self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //sets navigation bar to a clear black color
+         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        
+        self.navigationController?.navigationBarHidden = false
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        
-        User.currentUser().loginDelegate = self
-    
-    }
-    
    
-    
+        
+        
+        imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
+        
+        
+        imageView!.clipsToBounds = true
+        
+        imageView!.contentMode = .ScaleAspectFill
+        
+        imageView!.hidden = true
+        let image = UIImage(named: "bar")
+        
+        imageView!.image = image
+        navigationItem.titleView = imageView
 
     
+                User.currentUser().loginDelegate = self
+        
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+
+        self.logoImageView.hidden = true
+        self.loginButton.hidden = true
+        self.signInButton.hidden = true
+        
+        self.imageView!.hidden = true
+    }
     override func viewDidAppear(animated: Bool) {
         
         
+        var nav = self.navigationController?.navigationBar
         
-        if let token = User.currentUser().token {
+   
+        self.logoImageView.layer.cornerRadius = 50
+         self.logoImageView.clipsToBounds = true
+       
+        self.imageView!.hidden = false
+        springScaleFrom(self.imageView!, 0, -100, 0.5, 0.5)
+        
+        
+      
+        
+        
+        // animate the logoImageView
+        var scale1 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate1 = CGAffineTransformMakeTranslation(0, 500)
+        self.logoImageView.transform = CGAffineTransformConcat(scale1, translate1)
+        
+        animationWithDuration(4) {
+             self.logoImageView.hidden = false
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.logoImageView.transform = CGAffineTransformConcat(scale, translate)
+        }
+
+         // animate the textViews
+        
+        
+        var scale2 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate2 = CGAffineTransformMakeTranslation(-300, 0)
+        self.loginButton.transform = CGAffineTransformConcat(scale2, translate2)
+        
+        spring(1) {
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.loginButton.transform = CGAffineTransformConcat(scale, translate)
+            self.loginButton.hidden = false
+
+        }
+        
+        var scale3 = CGAffineTransformMakeScale(0.5, 0.5)
+        var translate3 = CGAffineTransformMakeTranslation(300, 0)
+        self.signInButton.transform = CGAffineTransformConcat(scale3, translate3)
+        
+        spring(1) {
+            var scale = CGAffineTransformMakeScale(1, 1)
+            var translate = CGAffineTransformMakeTranslation(0, 0)
+            self.signInButton.transform = CGAffineTransformConcat(scale, translate)
+            self.signInButton.hidden = false
+
+        }
+
+
+        
+
+        if let token = User.currentUser().token{
             
             var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
             
@@ -46,30 +143,28 @@ class LoginViewController: UIViewController, SignedInProtocol {
             
             UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
         }
-
+////        
+////        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        
+ //        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        
+     
         
         
     }
     
-    
-    func signInUnsuccesful(error: String) {
-        
-        
-        var alert:UIAlertView = UIAlertView(title: "Error", message: error, delegate: nil, cancelButtonTitle: "Ok")
-        
-        alert.show()
-    }
-
     @IBOutlet weak var usernameField: UITextField!
 
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var signInButton: UIButton!
+    
+    
     @IBAction func loginButton(sender: AnyObject) {
+        
+        
         
         self.usernameField.resignFirstResponder()
         self.passwordField.resignFirstResponder()
@@ -91,98 +186,9 @@ class LoginViewController: UIViewController, SignedInProtocol {
     
         
         else {
-
-        
-            User.currentUser().signIn(usernameField.text, password: passwordField.text)
             
-            
-            
-            
-            
-            
-            /*
-            
-
-            PFUser.logInWithUsernameInBackground(usernameField.text, password:passwordField.text) {
-                (user: PFUser!, error: NSError!) -> Void in
-                
-                
-                if (user != nil) {
-                    // need to go to tabBarController
-                    
-                    
-                    
-                    //all fields are filled in
-                    println("All fields are filled in and login complete")
-                    
-                    
-                    var userQuery = PFUser.query()
-                    userQuery.whereKey("username", equalTo: self.usernameField.text)
-                    
-                    userQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                        
-                        if objects.count > 0 {
-                            
-                            self.isLoggedIn = true
-                            self.checkIfLoggedIn()
-                            
-                        } else {
-                            
-//                            self.signUp()
-                        }
-
-                    })
-
-
-                } 
-
-
-               else {
-
-
-                    if let errorString = error.userInfo?["error"] as? NSString
-                    {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: "Ok")
-                        
-                        alert.show()
-                    }
-                        
-                    else {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: "Unable to login" , delegate: nil, cancelButtonTitle: "Ok")
-                        
-                        alert.show()
-                        
-                    }
-                    
-                    
-                    
-                }
-                
-            
-            }
-*/
-            
-            
+             User.currentUser().signIn(usernameField.text, password: passwordField.text)
         }
-
-    }
-
-
-    
-    func goToApp() {
-        
-        
-        var tbc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
-        
-        tbc?.tabBar.tintColor = UIColor.whiteColor()
-        
-        
-        tbc?.tabBar.barStyle = UIBarStyle.Black
-        
-        println(tbc)
-        
-        UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
-        
     }
 
     
@@ -231,12 +237,9 @@ class LoginViewController: UIViewController, SignedInProtocol {
         
     }
 
+  
+  
     
- 
-    
-    func update() {
-        
-    }
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
@@ -248,6 +251,32 @@ class LoginViewController: UIViewController, SignedInProtocol {
         // Dispose of any resources that can be recreated.
     }
 
+    func goToApp() {
+        
+        
+        var tbc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
+        
+        tbc?.tabBar.tintColor = UIColor.whiteColor()
+        
+        
+        tbc?.tabBar.barStyle = UIBarStyle.Black
+        
+        println(tbc)
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
+        
+    }
 
+    func signInUnsuccesful(error: String) {
+        
+        
+        var alert:UIAlertView = UIAlertView(title: "Error", message: error, delegate: nil, cancelButtonTitle: "Ok")
+        
+        alert.show()
+    }
+
+    func update() {
+        
+    }
 }
 
