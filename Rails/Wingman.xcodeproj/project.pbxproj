@@ -333,9 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				BD080DF41AC252D8009FC1F0 /* bar.png */,
+				BD080DE61AC23BB5009FC1F0 /* 59427-200.png */,
 				BD080DE51AC23BB5009FC1F0 /* nonic-pint-01-01-01.png */,
 				BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */,
-				BD080DE61AC23BB5009FC1F0 /* 59427-200.png */,
 				BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */,
 				BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */,
 				BD080DDB1AC1FE73009FC1F0 /* glass.png */,
