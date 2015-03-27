@@ -255,14 +255,17 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
             }
             
             
-            if let imageFile = userInfo["avatar_content_type"] as? String {
+            if let urlString = userInfo["image_string"] as? String {
                 
-                if let decodedData = NSData(base64EncodedString: imageFile, options: NSDataBase64DecodingOptions(rawValue: 0)) {
-                    var decodedImage = UIImage(data: decodedData)
-                    println(decodedImage)
-                    
-                    cell.userImage.image = decodedImage as UIImage!
-                }
+                println(urlString)
+                let url = NSURL(string: urlString)
+                
+                println(url)
+                let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+               
+                println(data)
+            //  cell.userImage.image =  UIImage(data: data!)
+                
                
             }
         }

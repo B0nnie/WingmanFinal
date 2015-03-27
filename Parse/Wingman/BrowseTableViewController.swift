@@ -372,12 +372,12 @@ class BrowseTableViewController: UITableViewController {
             
 //            self.phoneNumber = phoneNumber
             vc.phoneNumber = phoneNumber
-           
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         
         
-        self.navigationController?.pushViewController(vc, animated: true)
+       
         
         
     }

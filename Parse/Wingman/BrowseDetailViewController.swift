@@ -70,7 +70,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
 
       
         
-        println(self.phoneNumber)
+       
         fillLabels()
         
         startUpdatingLocation()
@@ -114,7 +114,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
       //  self.navigationController?.navigationItem.backBarButtonItem =
         
-        
+         println(self.phoneNumber)
         
         startUpdatingLocation()
         

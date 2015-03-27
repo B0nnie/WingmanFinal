@@ -384,6 +384,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func signUp(sender: AnyObject) {
         
+     
+        
         user.username = createUsernameField.text
         user.password = createPasswordField.text
         user.email = enterEmailField.text
@@ -426,12 +428,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 (succeeded: Bool!, error: NSError!) -> Void in
                 if error == nil {
                     // Hooray! Let them use the app now.
-                    
-                    
-                    self.saveInfoToParse()
+                                        self.saveInfoToParse()
                     
                  
                  
+                  
                     /*
                     println(user)
                     
@@ -445,6 +446,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 }
                 else
                 {
+                    
+                    
                     if let errorString = error.userInfo?["error"] as? NSString
                     {
                         var alert:UIAlertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: "Ok")
@@ -490,6 +493,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 
                 var gender = self.registerInfo["gender"] as String?
                 user["gender"] = gender
+                
+                user["postData"] = ["name": "JOHN", "AGE": "12"]
                 user.saveInBackground()
                 
                 

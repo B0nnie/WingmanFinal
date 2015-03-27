@@ -289,6 +289,22 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     }
 
     
+    @IBAction func logout(sender: AnyObject) {
+        
+        let user = PFUser.currentUser() as PFUser
+        
+        PFUser.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        
+        
+        //presents LoginViewController without tabbar at bottom
+        self.presentViewController(nc, animated: true, completion: nil)
+        
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

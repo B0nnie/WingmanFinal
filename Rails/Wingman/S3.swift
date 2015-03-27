@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//import AFAmazonS3Manager
 
 let s3URL = "https://s3.amazonaws.com/BUCKET/"
 
@@ -20,26 +21,10 @@ class S3 {
     
     var s3Manager: AFAmazonS3Manager {
         
-        let manager = AFAmazonS3Manager(accessKeyID: "ACCESS_KEY", secret: "SECRET")
+        let manager = AFAmazonS3Manager(accessKeyID: "AKIAIVV7LIB77YFJ4N2A", secret: "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")
         manager.requestSerializer.region = AFAmazonS3USStandardRegion
-        manager.requestSerializer.bucket = "BUCKET"
+        manager.requestSerializer.bucket = "wingmen"
         return manager
-        
-    }
-    
-    func saveVideo(completion: (()->())?) {
-        
-        s3Manager.postObjectWithFile("FILE_PATH", destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
-            
-            //            println("\(Int(CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100))% Uploaded")
-            
-            }, success: { (responseObject) -> Void in
-                
-                if completion != nil { completion!() }
-                
-            }) { (error) -> Void in
-                
-        }
         
     }
     
@@ -58,7 +43,7 @@ class S3 {
         
         let outputStream = NSOutputStream(toFileAtPath: filePath, append: false)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1)), dispatch_get_main_queue()) { () -> Void in
+       // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1)), dispatch_get_main_queue()) { () -> Void in
             
             self.s3Manager.getObjectWithPath(filePath, outputStream: outputStream, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) -> Void in
                 
@@ -74,7 +59,7 @@ class S3 {
                     
             }
             
-        }
+        //}
         
         
     }

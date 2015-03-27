@@ -239,7 +239,7 @@ class User {
             "method": "PUT",
             "body": [
                 
-                "user": [ "gender": gender, "interests": interests, "avatar": imageFile]
+                "user": [ "gender": gender, "interests": interests, "image_string": imageFile]
                // "user": [ "gender": gender, "interests": interests, "avatar": userImage]
                 
                 

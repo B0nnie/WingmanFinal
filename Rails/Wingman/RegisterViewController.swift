@@ -203,6 +203,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
          self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
@@ -269,13 +270,40 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         // data to pffile
 
+        
+        
+        ///////
    
-        let imageData = UIImagePNGRepresentation(resizedImage)
+//        let imageData = UIImagePNGRepresentation(resizedImage)
+//        
+//        let imageFile = imageData.base64EncodedStringWithOptions(.allZeros)
+//        
+//        registerInfo["imageFile"] = imageFile
         
-        let imageFile = imageData.base64EncodedStringWithOptions(.allZeros)
+        ////////
         
-        registerInfo["imageFile"] = imageFile
+        let randomNumber = arc4random_uniform(UINT32_MAX)
         
+        var photoFileName = "\(randomNumber)_avatar.png"
+        var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var filePath = paths[0].stringByAppendingPathComponent(photoFileName)
+        UIImagePNGRepresentation(resizedImage).writeToFile(filePath, atomically: true)
+        
+//        let imgData: NSData = UIImagePNGRepresentation(image)
+        
+        S3.model().s3Manager.postObjectWithFile(filePath, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+            
+                println("\(Int(CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100))% Uploaded")
+            
+            }, success: { (responseObject) -> Void in
+                
+                println(responseObject)
+                
+                self.registerInfo["imageURL"] = "https://wingmen.s3.amazonaws.com/\(photoFileName)"
+                
+            }) { (error) -> Void in
+                
+        }
         
         
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -420,10 +448,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         var gender = registerInfo["gender"] as String
         
-        var imageFile = registerInfo["imageFile"] as String
+        var imageUrl = registerInfo["imageURL"] as String
         
         if let userId = User.currentUser().userId {
-            User.currentUser().update(gender, interests: self.interestField.text, userId: userId, imageFile: imageFile)
+            User.currentUser().update(gender, interests: self.interestField.text, userId: userId, imageFile:
+                imageUrl)
         }
         
     }
@@ -447,7 +476,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         var fieldValues: [String] = [createUsernameField.text, createPasswordField.text, enterEmailField.text, interestField.text] //interestField.text
         
-        if find(fieldValues, "") != nil || self.registerInfo["imageFile"] == nil {
+        if find(fieldValues, "") != nil || self.registerInfo["imageURL"] == nil {
             
             //all fields are not filled in
             var alertViewController = UIAlertController(title: "Submission Error", message: "Please complete all fields", preferredStyle: UIAlertControllerStyle.Alert)
@@ -468,8 +497,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             registerInfo["username"] = self.createUsernameField.text
             registerInfo["interests"] = self.interestField.text
             
-            registerInfo["username"] = self.createUsernameField.text
-            registerInfo["interests"] = self.interestField.text
+       
             
             User.currentUser().signUp(createUsernameField.text, email: enterEmailField.text, password: createPasswordField.text)
         }

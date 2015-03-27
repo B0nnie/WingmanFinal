@@ -4,3 +4,4 @@
 
 #import<Parse/Parse.h>
 #import<Bolts/Bolts.h>
+#import "AFAmazonS3Manager.h"

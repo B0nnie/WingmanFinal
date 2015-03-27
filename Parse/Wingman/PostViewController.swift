@@ -154,11 +154,15 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
       
         
+        println("BUTTON WORKS")
+        
         
         if postData["clubOrBar"] != nil && startTime.text != "" && endTime.text != "" && phoneNumber.text != ""
             
         {
             
+            
+            println("ALLFIELDSOK")
             println(postData["clubOrBar"])
             
             postData["startTime"] = startTime.text.toInt()
@@ -176,19 +180,32 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
             
             
             query.findObjectsInBackgroundWithBlock() {
+            
                 (objects:[AnyObject]!, error:NSError!)->Void in
                 
+              
                 
-                var user = objects.last as PFUser
+                let user = objects.last as PFUser
                 
+                println("USER:\(user)")
+
+                
+                var postDataDict = self.postData
+              
+                
+         
                 user["postData"] = self.postData
                 
-
+                println("problem")
+                
                 var wingmanGender = self.postData["wingmanGender"] as String
                 user["wingmanGender"] = wingmanGender
              
       
+                
                 user.saveInBackground()
+                
+                
                 
                   self.showAlert()
                 
@@ -252,6 +269,12 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
         println(tbc)
         
+        tbc?.tabBar.tintColor = UIColor.whiteColor()
+        
+        
+        tbc?.tabBar.barStyle = UIBarStyle.Black
+        
+
         UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
 //
 //        self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("view2") as UIViewController, animated: true)
@@ -296,11 +319,19 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     
     func didReceiveVenueChoice(venue: ClubOrBarVenues) {
         
-            postData["clubOrBar"] = venue
+            postData["clubOrBar"] = venue.name
+        
+
+        var CLLocation = venue.location
+        
+        var geoPoint = PFGeoPoint(latitude: CLLocation.coordinate.latitude, longitude: CLLocation.coordinate.longitude)
+        
+        
+        postData["location"] = geoPoint
+        
+        
         
         var venueName = venue.name
-        
-    
        self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
       
 
