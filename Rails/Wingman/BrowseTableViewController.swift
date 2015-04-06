@@ -189,27 +189,49 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
        
     }
     
+    
+    // func that takes the filePath (the filePath for the directory where our imageFile is stored) and the fileName (the specific string we created which includes our imageName and a randomNumber)
+   
     func getImageWithFilePath(filePath: String, fileName: String, completion: (() -> ())?) {
+        
+        
+    
+        // NSFileManager is a predefined iOS class
+        // we check if there is an imageFile in the directory (using the filePath of our directory)
+        // if there is an imageFile returns true else return false
         
         
         if NSFileManager.defaultManager().fileExistsAtPath(filePath) {
             
+            
+            // if there is an imageFile in the directory then completion = true
+            //  IF THERE IS ALREADY AN IMAGEFILE (WE ALREADY DOWNLOADED IT) IN OUR COMPUTER DIRECTORY WE DON'T NEED TO DOWNLOAD THE IMAGE FROM S3, SO COMPLETION (CODE BELOW DOESN'T GET EXECUTED)
             if let c = completion { c() }
             
         }
         
-        // if timestamp of update then delete and redownload ... TODO
+        
+        // IF THERE IS NO IMAGE IN OUR DIRECTORY (WE DIDN'T ALREADY DOWNLOADED IT, SO METHOD DOESN'T END AT COMPLETION ABOVE), THEN DOWNLOAD IMAGEFILE FROM S3 LINK (THAT WE STORED EARLIER IN REGISTERVIEWCONTROLLER)
+        
+        // AT EVERY STEP OF THE DOWNLOAD OF THE IMAGEFILE, OUTPUT STREAM CHANGES AND THEN WE UPDATE THE IMAGEFILE AT DIRECTORY (BY DELETING THE OLD ONE AND ADDING THE UPDATED ONE)
+  
+        
+        // remove old imageFile
         NSFileManager.defaultManager().removeItemAtPath(filePath, error: nil)
         
+        // update the file at the filePath directory
+        // OutputStream is the data we receive from the request (the downloading of the image from the imageFile)
         let outputStream = NSOutputStream(toFileAtPath: filePath, append: false)
         
-        // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1)), dispatch_get_main_queue()) { () -> Void in
-        
+       // getObjectWithPath download the image from the imageFile (the OutputStream) of the directory. It takes the fileName of the directory and the outputStream  (OutputStream is the imageFile we downloaded from S3)
         S3.model().s3Manager.getObjectWithPath(fileName, outputStream: outputStream, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) -> Void in
             
             //                println("\(Int(CGFloat(totalBytesRead) / CGFloat(totalBytesExpectedToRead) * 100.0))% Downloaded")
             
-            }, success: { (responseObject) -> Void in
+            },
+            
+            // if the image is succesfully downloaded from the imageFile stored in S3 then completion
+            success: { (responseObject) -> Void in
                 
                 println("image saved")
                 
@@ -217,6 +239,7 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
                 
             }) { (error) -> Void in
                 
+                // if error do stuff
         }
         
         
@@ -233,15 +256,7 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
         cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
 
-        
-//        
-//        springScaleFrom(cell.genderLabel, 200, 200, 0.5, 0.5)
-//        
-//        springScaleFrom(cell.usernameLabel, 200, 200, 0.5, 0.5)
-//        springScaleFrom(cell.clubOrBarLabel, 200, 200, 0.5, 0.5)
-//        springScaleFrom(cell.timeLabel, 200, 200, 0.5, 0.5)
-//        
-//        springScaleFrom(cell.userImage, -100, 200, 0.5, 0.5)
+
         
         var event = self.arrayOfEvents[indexPath.row]
         
@@ -288,19 +303,32 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
             }
             
             
+            
+            // take the amazonS3 URL link that we sent to the Rails API, and that the Rails API sent us back
+            // THE URL LINK CONTAINS THE FILENAME OF OUR IMAGE AND WE USE THAT FILENAME TO FIND THE DIRECTORY WHERE OUR IMAGEFILE IS STORED
             if let urlString = userInfo["image_string"] as? String {
                 
+                // create all the components separated by / in the URL and store them in an array of string that call urlParts
                 let urlParts = urlString.componentsSeparatedByString("/")
                 
+                
+                // take the last part of the URL (our fileName (the specific string that we created for our image (which include our imageName and a random number))
                 if let fileName = urlParts.last {
                     
+                    // grab the directory where we stored our imageName (the directory has our fileName (the image name with the random number) at the end of it)
                     var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var filePath = paths[0].stringByAppendingPathComponent(fileName)
                     
+                    
+                    // SEE THE GETIMAGEWITHFILEPATH METHOD IN THIS CLASS
+                    // this function takes our filePath directory and our fileName and gets the image from the imageFile in the directory
                     getImageWithFilePath(filePath, fileName: fileName, completion: { () -> () in
                         
+                        
+                        // take the contentsOfTheImageFile in our directory and create an image with that file
                         let image = UIImage(contentsOfFile: filePath)
                         
+                        // display the image in the userImageView
                         cell.userImage.image = image
                         
                     })
@@ -310,39 +338,13 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
                
             }
         }
-        
-        
-                       //        if let seeking = postData["wingmanGender"] as? String {
-            //
-            //            cell.seekingLabel.text = "Seeking: \(seeking)"
-            //
-            //        }
-            
-        
+
         
             return cell
 
             
     
-        /*
-        if let imageFile = registerInfo["imageFile"] as? PFFile {
-        imageFile.getDataInBackgroundWithBlock({
-        (imageData: NSData!, error: NSError!) in
-        if (error == nil) {x
-        let image : UIImage = UIImage(data:imageData)!
-        //image object implementation
-        
-        cell.userImage.image = image
-        }
-        })
-        
-        }
-        */
-        
-        //        if let interest = registerInfo["interests"] as? String {
-        //            cell.interestsLabel.text = interest
-        //        }
-        
+      
         
         
     }

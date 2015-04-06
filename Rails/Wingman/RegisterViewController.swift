@@ -258,51 +258,41 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         
         
-        // tranforming it to a PFFile
-        
-        // image to data
-        
-       
-        
-        //OR with path
-//        var url:NSURL = NSURL(string : "urlHere")!
-//        var imageData:NSData = NSData(contentsOfURL: url, options: nil, error: nil)!
-        
-        // data to pffile
-
-        
-        
-        ///////
-   
-//        let imageData = UIImagePNGRepresentation(resizedImage)
-//        
-//        let imageFile = imageData.base64EncodedStringWithOptions(.allZeros)
-//        
-//        registerInfo["imageFile"] = imageFile
-        
-        ////////
-        
+   // create a random number
         let randomNumber = arc4random_uniform(UINT32_MAX)
         
+        // create a specific string for the amazonS3 URL of our image. That string consists of our image image name with a random number.
         var photoFileName = "\(randomNumber)_avatar.png"
+        
+        // create a directory for storing the image and add the image name to that directory
         var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var filePath = paths[0].stringByAppendingPathComponent(photoFileName)
+        
+        // create a PNG version of our image and store it in our directory
         UIImagePNGRepresentation(resizedImage).writeToFile(filePath, atomically: true)
         
-//        let imgData: NSData = UIImagePNGRepresentation(image)
-        
+
+        // take our singleton and call the postObject pre-defined method (pre-defined in the AFAmazonS3Manager class)
+        // this method posts the filePath (of our directory with the image in it to the amazonS3. If successful, amazonS3 will store our image and we will have an amazonS3 link with our image in it.
         S3.model().s3Manager.postObjectWithFile(filePath, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
             
                 println("\(Int(CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100))% Uploaded")
             
             }, success: { (responseObject) -> Void in
                 
+                // if successful, we have an amazon S3 link with our image in it. The url ends with our photoFileName (the specific string we created above with a random number at the end of it). We then store the imageUrl to our registerInfo dictionary that we're going to send to Rails. We only send that Url to Rails and not the image itself.
+                
+                
                 println(responseObject)
+                
+                
+                // store the imageUrl to our registerInfo dictionary that we're going to send to Rails
                 
                 self.registerInfo["image_string"] = "https://wingmen.s3.amazonaws.com/\(photoFileName)"
                 
             }) { (error) -> Void in
                 
+                // if error do stuff
         }
         
         
