@@ -188,6 +188,39 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
         cell.preservesSuperviewLayoutMargins = false
        
     }
+    
+    func getImageWithFilePath(filePath: String, fileName: String, completion: (() -> ())?) {
+        
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(filePath) {
+            
+            if let c = completion { c() }
+            
+        }
+        
+        // if timestamp of update then delete and redownload ... TODO
+        NSFileManager.defaultManager().removeItemAtPath(filePath, error: nil)
+        
+        let outputStream = NSOutputStream(toFileAtPath: filePath, append: false)
+        
+        // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1)), dispatch_get_main_queue()) { () -> Void in
+        
+        S3.model().s3Manager.getObjectWithPath(fileName, outputStream: outputStream, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) -> Void in
+            
+            //                println("\(Int(CGFloat(totalBytesRead) / CGFloat(totalBytesExpectedToRead) * 100.0))% Downloaded")
+            
+            }, success: { (responseObject) -> Void in
+                
+                println("image saved")
+                
+                if let c = completion { c() }
+                
+            }) { (error) -> Void in
+                
+        }
+        
+        
+    }
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -257,13 +290,22 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
             
             if let urlString = userInfo["image_string"] as? String {
                 
-                println(urlString)
-                let url = NSURL(string: urlString)
+                let urlParts = urlString.componentsSeparatedByString("/")
                 
-                println(url)
-                let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                
-               //cell.userImage.image =  UIImage(data: data!)
+                if let fileName = urlParts.last {
+                    
+                    var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                    var filePath = paths[0].stringByAppendingPathComponent(fileName)
+                    
+                    getImageWithFilePath(filePath, fileName: fileName, completion: { () -> () in
+                        
+                        let image = UIImage(contentsOfFile: filePath)
+                        
+                        cell.userImage.image = image
+                        
+                    })
+                    
+                }
                 
                
             }

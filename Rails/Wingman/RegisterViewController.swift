@@ -299,7 +299,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 
                 println(responseObject)
                 
-                self.registerInfo["imageURL"] = "https://wingmen.s3.amazonaws.com/\(photoFileName)"
+                self.registerInfo["image_string"] = "https://wingmen.s3.amazonaws.com/\(photoFileName)"
                 
             }) { (error) -> Void in
                 
@@ -448,7 +448,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         var gender = registerInfo["gender"] as String
         
-        var imageUrl = registerInfo["imageURL"] as String
+        var imageUrl = registerInfo["image_string"] as String
         
         if let userId = User.currentUser().userId {
             User.currentUser().update(gender, interests: self.interestField.text, userId: userId, imageFile:
@@ -476,7 +476,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         var fieldValues: [String] = [createUsernameField.text, createPasswordField.text, enterEmailField.text, interestField.text] //interestField.text
         
-        if find(fieldValues, "") != nil || self.registerInfo["imageURL"] == nil {
+        if find(fieldValues, "") != nil || self.registerInfo["image_string"] == nil {
             
             //all fields are not filled in
             var alertViewController = UIAlertController(title: "Submission Error", message: "Please complete all fields", preferredStyle: UIAlertControllerStyle.Alert)
