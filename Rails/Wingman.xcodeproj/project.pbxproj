@@ -441,11 +441,11 @@
 				TargetAttributes = {
 					29775D301AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = WW48EG42V9;
+						DevelopmentTeam = XCU2F2Y374;
 					};
 					29775D451AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = WW48EG42V9;
+						DevelopmentTeam = XCU2F2Y374;
 						TestTargetID = 29775D301AA3D45800A56925;
 					};
 				};

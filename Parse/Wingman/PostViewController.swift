@@ -185,7 +185,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
                 
               
                 
-                let user = objects.last as PFUser
+                let user = objects.last as! PFUser
                 
                 println("USER:\(user)")
 
@@ -198,7 +198,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
                 
                 println("problem")
                 
-                var wingmanGender = self.postData["wingmanGender"] as String
+                var wingmanGender = self.postData["wingmanGender"] as! String
                 user["wingmanGender"] = wingmanGender
              
       
@@ -238,7 +238,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
         if segue.identifier == "postToPicker" {
             
-            let vc = segue.destinationViewController as PickerViewController
+            let vc = segue.destinationViewController as! PickerViewController
             
             vc.delegate = self
             
@@ -290,10 +290,12 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     
     
     //dismiss the keyboard when tapping anywhere on view
-        override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
+    
     
     
     //function letting us know which gender user chose and sending dictionary to Parse
@@ -413,7 +415,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as! UINavigationController
         
         
         //presents LoginViewController without tabbar at bottom

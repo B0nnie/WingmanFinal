@@ -38,11 +38,11 @@ class APIRequest {
         
         // wrapping it in a parenthesis otherwise the + sign doesn't see the as String
         // the url + users
-        var url = NSURL(string: RAILS_URL + (options["endpoint"] as String))
+        var url = NSURL(string: RAILS_URL + (options["endpoint"] as! String))
         var request = NSMutableURLRequest(URL: url!)
         
         // method is post
-        request.HTTPMethod = options["method"] as String
+        request.HTTPMethod = options["method"] as! String
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -68,7 +68,7 @@ class APIRequest {
             
         default :
             
-            let bodyInfo = options["body"] as [String: AnyObject]
+            let bodyInfo = options["body"] as! [String: AnyObject]
             
             let requestData = NSJSONSerialization.dataWithJSONObject(bodyInfo, options: NSJSONWritingOptions.allZeros, error: nil)
             

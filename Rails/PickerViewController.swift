@@ -44,7 +44,7 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @IBAction func doneButton(sender: AnyObject) {
         
-        if let venue = self.clubOrBar?
+        if let venue = self.clubOrBar
         {
             showAlert()
             
@@ -230,7 +230,7 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func getLatestMeasurementFromLocations(locations:[AnyObject]) -> CLLocation {
-        return locations[locations.count - 1] as CLLocation
+        return locations[locations.count - 1] as! CLLocation
     }
     
     func isLocationMeasurementNotCached(location:CLLocation) -> Bool {
@@ -294,7 +294,7 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
         User.currentUser().token = nil
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as! UINavigationController
         
         
         //presents LoginViewController without tabbar at bottom

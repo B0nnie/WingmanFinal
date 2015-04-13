@@ -267,7 +267,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
     }
     
     func getLatestMeasurementFromLocations(locations:[AnyObject]) -> CLLocation {
-        return locations[locations.count - 1] as CLLocation
+        return locations[locations.count - 1] as! CLLocation
     }
     
     func isLocationMeasurementNotCached(location:CLLocation) -> Bool {
@@ -334,7 +334,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as! UINavigationController
         
         
         //presents LoginViewController without tabbar at bottom

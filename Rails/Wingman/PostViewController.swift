@@ -170,7 +170,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
             
             postData["phonenumber"] = phoneNumber.text
             
-            var venue = postData["clubOrBar"] as ClubOrBarVenues
+            var venue = postData["clubOrBar"] as! ClubOrBarVenues
             var venueName = venue.name
             
             var latitudeDegrees = venue.location.coordinate.latitude
@@ -179,7 +179,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
             
             var latitude = Float(latitudeDegrees)
             var longitude = Float(longitudeDegrees)
-            var wingmanGender = postData["wingmanGender"] as String
+            var wingmanGender = postData["wingmanGender"] as! String
             User.currentUser().postEvent(venueName, latitude: latitude, longitude: longitude, startTime: startTime.text,  endTime: endTime.text, wingmanGender: wingmanGender)
             
             
@@ -214,7 +214,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
         
         if segue.identifier == "postToPicker" {
             
-            let vc = segue.destinationViewController as PickerViewController
+            let vc = segue.destinationViewController as! PickerViewController
             
             vc.delegate = self
             
@@ -260,7 +260,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
     
     
     //dismiss the keyboard when tapping anywhere on view
-        override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
@@ -393,7 +393,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol, didPostEvent
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as! UINavigationController
         
         
         //presents LoginViewController without tabbar at bottom

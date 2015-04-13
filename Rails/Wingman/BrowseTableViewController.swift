@@ -249,7 +249,7 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
         
        
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! BrowseTableViewCell
 
         cell.selectionStyle = .None
         
@@ -291,7 +291,7 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
 
     
     
-        if let userInfo = event["user"] as [String: AnyObject]? {
+        if let userInfo = event["user"] as! [String: AnyObject]? {
             
             if let username = userInfo["username"] as? String {
                 cell.usernameLabel.text = username
@@ -372,7 +372,7 @@ class BrowseTableViewController: UITableViewController,  didGetEventsProtocol {
         
         //didn't connect segue in storyboard so doing it programmatically here
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewControllerWithIdentifier("browseDetailVC") as BrowseDetailViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("browseDetailVC") as! BrowseDetailViewController
         
         //self for global variables/properties
         

@@ -347,7 +347,7 @@ func getImageWithFilePath(filePath: String, fileName: String, completion: (() ->
     }
     
     func getLatestMeasurementFromLocations(locations:[AnyObject]) -> CLLocation {
-        return locations[locations.count - 1] as CLLocation
+        return locations[locations.count - 1] as! CLLocation
     }
     
     func isLocationMeasurementNotCached(location:CLLocation) -> Bool {
@@ -411,7 +411,7 @@ func getImageWithFilePath(filePath: String, fileName: String, completion: (() ->
         User.currentUser().token = nil
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as! UINavigationController
         
         
         //presents LoginViewController without tabbar at bottom

@@ -49,7 +49,7 @@ class FourSquareAPI: NSObject {
             
             let strData = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            if let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary? {
+            if let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as! NSDictionary? {
                 if((err) != nil) {
                     println(err!.localizedDescription)
                 }
@@ -62,13 +62,13 @@ class FourSquareAPI: NSObject {
                             
                             println("\(response)")
                             
-                            let allVenues: [NSDictionary] = response["venues"] as [NSDictionary]
+                            let allVenues: [NSDictionary] = response["venues"] as! [NSDictionary]
                             
                             for venue:NSDictionary in allVenues {
-                                var venueName:String = venue["name"] as String
+                                var venueName:String = venue["name"] as! String
                                 
-                                var location:NSDictionary = venue["location"] as NSDictionary
-                                var venueLocation:CLLocation = CLLocation(latitude: location["lat"] as Double, longitude: location["lng"] as Double)
+                                var location:NSDictionary = venue["location"] as! NSDictionary
+                                var venueLocation:CLLocation = CLLocation(latitude: location["lat"] as! Double, longitude: location["lng"] as! Double)
                                 
                                 venues.append(ClubOrBarVenues(name: venueName, location: venueLocation, distanceFromUser: venueLocation.distanceFromLocation(userLocation)))
                             }

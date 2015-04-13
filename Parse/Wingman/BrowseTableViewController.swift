@@ -154,14 +154,14 @@ class BrowseTableViewController: UITableViewController {
             (objects:[AnyObject]!, error:NSError!)->Void in
             if ((error) == nil) {
                 
-                if let user = objects.last as PFUser? {
+                if let user = objects.last as! PFUser? {
                     
                     
                     
                 // if we created a postData, the user has a wingmanGender in parse that user is seeking
-                    if let seekingGender = user["wingmanGender"] as String? {
+                    if let seekingGender = user["wingmanGender"] as! String? {
                         
-                        if let gender = user["gender"] as String? {
+                        if let gender = user["gender"] as! String? {
                             self.loadUsers(seekingGender, ourGender: gender)
                         }
                        
@@ -269,7 +269,7 @@ class BrowseTableViewController: UITableViewController {
         
        
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as BrowseTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! BrowseTableViewCell
 
         cell.selectionStyle = .None
         
@@ -356,7 +356,7 @@ class BrowseTableViewController: UITableViewController {
 
      //didn't connect segue in storyboard so doing it programmatically here
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewControllerWithIdentifier("browseDetailVC") as BrowseDetailViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("browseDetailVC") as! BrowseDetailViewController
         
         //self for global variables/properties
         var registerInfo = self.arrayOfRegisterInfo[indexPath.row]
@@ -366,7 +366,7 @@ class BrowseTableViewController: UITableViewController {
         vc.registerInfo = registerInfo
         vc.postData = postData
         
-        if let phoneNumber = postData["phonenumber"] as String? {
+        if let phoneNumber = postData["phonenumber"] as! String? {
             
             
             

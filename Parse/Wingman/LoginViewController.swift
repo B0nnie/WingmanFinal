@@ -34,15 +34,17 @@ class LoginViewController: UIViewController {
         
     
         
-       // hides navigation bar on LoginVC
-      //  self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        
+        // hides navigation bar on LoginVC
+        //  self.navigationController?.setNavigationBarHidden(true, animated: true)
         //sets navigation bar to a clear black color
-         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
         self.navigationController?.navigationBarHidden = false
         //sets navigation bar's "Back" button item to white
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-   
+        
         
         
         imageView = UIImageView(frame: CGRect(x: -80, y: 0, width: 300, height: 40))
@@ -58,7 +60,6 @@ class LoginViewController: UIViewController {
         imageView!.image = image
         navigationItem.titleView = imageView
 
-    
         
     }
     
@@ -81,9 +82,11 @@ class LoginViewController: UIViewController {
          self.logoImageView.clipsToBounds = true
        
         self.imageView!.hidden = false
-        
-        
         springScaleFrom(self.imageView!, 0, -100, 0.5, 0.5)
+        
+        
+        
+
         
         
       
@@ -218,7 +221,7 @@ class LoginViewController: UIViewController {
                 } else {
                     if let errorString = error.userInfo?["error"] as? NSString
                     {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: "Ok")
+                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString as String, delegate: nil, cancelButtonTitle: "Ok")
                         
                         alert.show()
                     }
@@ -287,12 +290,13 @@ class LoginViewController: UIViewController {
 
   
   
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    view.endEditing(true)
+    super.touchesBegan(touches, withEvent: event)
     }
+    
 
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

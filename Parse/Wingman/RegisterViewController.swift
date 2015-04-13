@@ -75,6 +75,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
 
 
         
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -201,10 +202,12 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
          self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
+
     }
+
     
     func buttonClicked(sender:UIButton)
     {
@@ -243,7 +246,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        var image = info[UIImagePickerControllerOriginalImage] as UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         //profileImage = scaleImage(profileImage, newSize: CGSizeMake(600, 600))
         
@@ -425,7 +428,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             registerInfo["interests"] = self.interestField.text
             
             user.signUpInBackgroundWithBlock {
-                (succeeded: Bool!, error: NSError!) -> Void in
+                (succeeded: Bool, error: NSError!) -> Void in
                 if error == nil {
                     // Hooray! Let them use the app now.
                                         self.saveInfoToParse()
@@ -450,7 +453,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                     
                     if let errorString = error.userInfo?["error"] as? NSString
                     {
-                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: "Ok")
+                        var alert:UIAlertView = UIAlertView(title: "Error", message: errorString as String, delegate: nil, cancelButtonTitle: "Ok")
                         
                         alert.show()
                     }
@@ -485,13 +488,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             if ((error) == nil) {
                 
                 
-                let user:PFUser =  objects.last as PFUser
+                let user:PFUser =  objects.last as! PFUser
                 
                 
                 //this creates the registerInfo column in Parse
                 user["registerInfo"] = self.registerInfo
                 
-                var gender = self.registerInfo["gender"] as String?
+                var gender = self.registerInfo["gender"] as! String?
                 user["gender"] = gender
                 
                 user["postData"] = ["name": "JOHN", "AGE": "12"]

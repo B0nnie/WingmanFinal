@@ -204,7 +204,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
@@ -246,7 +246,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        var image = info[UIImagePickerControllerOriginalImage] as UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         //profileImage = scaleImage(profileImage, newSize: CGSizeMake(600, 600))
         
@@ -436,9 +436,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     func update() {
         
-        var gender = registerInfo["gender"] as String
+        var gender = registerInfo["gender"] as! String
         
-        var imageUrl = registerInfo["image_string"] as String
+        var imageUrl = registerInfo["image_string"] as! String
         
         if let userId = User.currentUser().userId {
             User.currentUser().update(gender, interests: self.interestField.text, userId: userId, imageFile:
