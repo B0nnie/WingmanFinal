@@ -183,6 +183,8 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
                 var user = objects.last as PFUser
                 
                 user["postData"] = self.postData
+          
+                println(" POSTDATA +\(self.postData)")
                 
 
                 var wingmanGender = self.postData["wingmanGender"] as String
@@ -294,21 +296,31 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
     }
     
+ 
+    
+    
+
     func didReceiveVenueChoice(venue: ClubOrBarVenues) {
         
-            postData["clubOrBar"] = venue
+        postData["clubOrBar"] = venue.name
+        
+        
+        var CLLocation = venue.location
+        
+        var geoPoint = PFGeoPoint(latitude: CLLocation.coordinate.latitude, longitude: CLLocation.coordinate.longitude)
+        
+        
+        postData["location"] = geoPoint
+        
+        
         
         var venueName = venue.name
+        self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
         
-    
-       self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
-      
-
+        
         
     }
     
-    
-
     
     /*
     
