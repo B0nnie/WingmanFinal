@@ -36,6 +36,7 @@
 		2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */; };
 		2980CDAD1AC06818005A4A7D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2980CDAC1AC06818005A4A7D /* Icon.png */; };
 		29A075981ABB711E00204989 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A075971ABB711E00204989 /* PickerViewController.swift */; };
+		29C066BD1AC458FD0081FAB3 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C066BC1AC458FD0081FAB3 /* bar.png */; };
 		29E637801AC059BB009B5241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E6377F1AC059BB009B5241 /* Images.xcassets */; };
 		BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */; };
 		BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC21AC0ABBF009FC1F0 /* Data.swift */; };
@@ -56,10 +57,10 @@
 		BD080DEB1AC23BB5009FC1F0 /* empty-wine-glass-md.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */; };
 		BD080DEC1AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */; };
 		BD080DEE1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */; };
-		BD080DF51AC252D8009FC1F0 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD080DF41AC252D8009FC1F0 /* bar.png */; };
 		BD53079D1AA9580400D8DBBB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */; };
 		BD53079F1AA9702200D8DBBB /* defaultimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD53079E1AA9702200D8DBBB /* defaultimage.jpg */; };
 		BD5307A21AAA2A7900D8DBBB /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */; };
+		BD84EB321ADB3D1C00741CE5 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD84EB311ADB3D1C00741CE5 /* bar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
 		2980CDAC1AC06818005A4A7D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		29A075971ABB711E00204989 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		29C066BC1AC458FD0081FAB3 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		29E6377F1AC059BB009B5241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		BD080DC21AC0ABBF009FC1F0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -127,10 +129,10 @@
 		BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-wine-glass-md.png"; sourceTree = "<group>"; };
 		BD080DE81AC23BB5009FC1F0 /* wine-glass-silhouette-black-and-white-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wine-glass-silhouette-black-and-white-md.png"; sourceTree = "<group>"; };
 		BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beer-mug-black-and-white-hi.png"; sourceTree = "<group>"; };
-		BD080DF41AC252D8009FC1F0 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		BD53079C1AA9580400D8DBBB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseTableViewCell.swift; path = Wingman/BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BD53079E1AA9702200D8DBBB /* defaultimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = defaultimage.jpg; path = Wingman/defaultimage.jpg; sourceTree = "<group>"; };
 		BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseDetailViewController.swift; path = Wingman/BrowseDetailViewController.swift; sourceTree = "<group>"; };
+		BD84EB311ADB3D1C00741CE5 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				29775D3A1AA3D45800A56925 /* Main.storyboard */,
 				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
 				BD5307A01AA9702700D8DBBB /* Images */,
+				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D341AA3D45800A56925 /* Supporting Files */,
 				29775DB11AA4F29000A56925 /* Wingman-Bridging-Header.h */,
 			);
@@ -255,7 +258,6 @@
 		29FD51561AB4CA1100A0D7DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
 				BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */,
@@ -279,13 +281,27 @@
 				BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */,
 			);
 			name = Animations;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD5307A01AA9702700D8DBBB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BD080DF41AC252D8009FC1F0 /* bar.png */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+				29C066BC1AC458FD0081FAB3 /* bar.png */,
+=======
+>>>>>>> origin/eb3-branch
+=======
+>>>>>>> origin/eb3-branch
+=======
+>>>>>>> origin/eb3-branch
+=======
+>>>>>>> origin/eb3-branch
 				BD080DE51AC23BB5009FC1F0 /* nonic-pint-01-01-01.png */,
+				BD84EB311ADB3D1C00741CE5 /* bar.png */,
 				BD080DED1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png */,
 				BD080DE61AC23BB5009FC1F0 /* 59427-200.png */,
 				BD080DE71AC23BB5009FC1F0 /* empty-wine-glass-md.png */,
@@ -354,10 +370,11 @@
 				TargetAttributes = {
 					29775D301AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = XCU2F2Y374;
+						DevelopmentTeam = WW48EG42V9;
 					};
 					29775D451AA3D45800A56925 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = WW48EG42V9;
 						TestTargetID = 29775D301AA3D45800A56925;
 					};
 				};
@@ -392,9 +409,25 @@
 				BD080DD61AC1D229009FC1F0 /* backbutton@2x.png in Resources */,
 				2980CDAB1AC063E1005A4A7D /* TipoType - Libertad.otf in Resources */,
 				BD080DD01AC1AB0F009FC1F0 /* club-scene.jpg in Resources */,
-				BD080DF51AC252D8009FC1F0 /* bar.png in Resources */,
 				BD080DE91AC23BB5009FC1F0 /* nonic-pint-01-01-01.png in Resources */,
 				29E637801AC059BB009B5241 /* Images.xcassets in Resources */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+				29C066BD1AC458FD0081FAB3 /* bar.png in Resources */,
+=======
+				BD84EB321ADB3D1C00741CE5 /* bar.png in Resources */,
+>>>>>>> origin/eb3-branch
+=======
+				BD84EB321ADB3D1C00741CE5 /* bar.png in Resources */,
+>>>>>>> origin/eb3-branch
+=======
+				BD84EB321ADB3D1C00741CE5 /* bar.png in Resources */,
+>>>>>>> origin/eb3-branch
+=======
+				BD84EB321ADB3D1C00741CE5 /* bar.png in Resources */,
+>>>>>>> origin/eb3-branch
 				29775D411AA3D45800A56925 /* LaunchScreen.xib in Resources */,
 				BD080DDC1AC1FE73009FC1F0 /* glass.png in Resources */,
 				BD080DEE1AC23BEA009FC1F0 /* beer-mug-black-and-white-hi.png in Resources */,

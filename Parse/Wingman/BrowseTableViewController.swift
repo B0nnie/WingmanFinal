@@ -37,12 +37,12 @@ class BrowseTableViewController: UITableViewController {
         
         tabBarImageView!.hidden = true
         
-        let image = UIImage(named: "bar")
+        let image = UIImage(named: "bar_illus")
         tabBarImageView!.image = image
         navigationItem.titleView = tabBarImageView
         
         
-      //  tableView.separatorColor = UIColor.blueColor()
+        tableView.separatorColor = UIColor.darkGrayColor()
         
         tableView.layoutMargins = UIEdgeInsetsZero
         
@@ -103,6 +103,7 @@ class BrowseTableViewController: UITableViewController {
         backButton.setBackButtonBackgroundImage(backButtonImage, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
         
         self.navigationController?.navigationItem.backBarButtonItem = backButton
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -126,7 +127,7 @@ class BrowseTableViewController: UITableViewController {
         tabBarImageView!.hidden = false
         springScaleFrom(tabBarImageView!, 0, -100, 0.5, 0.5)
         
-            // addBlurEffect()
+        // addBlurEffect()
         
         
     }

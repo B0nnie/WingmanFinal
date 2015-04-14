@@ -94,10 +94,10 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         
         imageView!.clipsToBounds = true
         
-        imageView!.contentMode = .ScaleAspectFill
+        imageView!.contentMode = .ScaleToFill
         
         imageView!.hidden = true
-        let image = UIImage(named: "bar")
+        let image = UIImage(named: "bar_illus")
         imageView!.image = image
         navigationItem.titleView = imageView
         

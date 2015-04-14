@@ -137,6 +137,21 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
         return 0
     }
     
+    @IBAction func logout(sender: AnyObject) {
+        
+        let user = PFUser.currentUser() as PFUser
+        
+        PFUser.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nc = storyboard.instantiateViewControllerWithIdentifier("loginNC") as UINavigationController
+        
+        
+        //presents LoginViewController without tabbar at bottom
+        self.presentViewController(nc, animated: true, completion: nil)
+        
+    }
     
     //changes the color of the items in the pickerview rows to white
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -288,8 +303,7 @@ class PickerViewController: UIViewController, UINavigationControllerDelegate, UI
         pickerClubBar.reloadAllComponents()
     }
 
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

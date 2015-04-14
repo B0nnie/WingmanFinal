@@ -79,7 +79,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         tabBarImageView!.contentMode = .ScaleAspectFill
         
         tabBarImageView!.hidden = true
-        let image = UIImage(named: "bar")
+        let image = UIImage(named: "bar_illus")
         tabBarImageView!.image = image
         navigationItem.titleView = tabBarImageView
 
@@ -172,9 +172,7 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
             var query = PFQuery(className:"_User")
             
             query.whereKey("objectId", equalTo: PFUser.currentUser().objectId)
-            
-            
-            
+        
             
             query.findObjectsInBackgroundWithBlock() {
                 (objects:[AnyObject]!, error:NSError!)->Void in
@@ -183,6 +181,8 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
                 var user = objects.last as PFUser
                 
                 user["postData"] = self.postData
+          
+                println(" POSTDATA +\(self.postData)")
                 
 
                 var wingmanGender = self.postData["wingmanGender"] as String
@@ -244,15 +244,18 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
 
      //this takes us to Browser after post button is pushed and info has been successfully sent to parse
     
-    
-    
     func goToBrowseTableVC() {
         
         var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
         
         println(tbc)
         
+        tbc?.tabBar.tintColor = UIColor.whiteColor()
+        tbc?.tabBar.barStyle = UIBarStyle.Black
+        
         UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
+        
+        
 //
 //        self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("view2") as UIViewController, animated: true)
         
@@ -294,21 +297,68 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
         
     }
     
+ 
+    
+    
+
     func didReceiveVenueChoice(venue: ClubOrBarVenues) {
         
-            postData["clubOrBar"] = venue
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            postData["clubOrBar"] = venue.name
+=======
+        postData["clubOrBar"] = venue.name
+        
+>>>>>>> origin/eb3-branch
+=======
+        postData["clubOrBar"] = venue.name
+        
+>>>>>>> origin/eb3-branch
+=======
+        postData["clubOrBar"] = venue.name
+        
+>>>>>>> origin/eb3-branch
+=======
+        postData["clubOrBar"] = venue.name
+        
+>>>>>>> origin/eb3-branch
+        
+        var CLLocation = venue.location
+        
+        var geoPoint = PFGeoPoint(latitude: CLLocation.coordinate.latitude, longitude: CLLocation.coordinate.longitude)
+        
+        
+        postData["location"] = geoPoint
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        
+        
+>>>>>>> origin/eb3-branch
+=======
+        
+        
+>>>>>>> origin/eb3-branch
+=======
+        
+        
+>>>>>>> origin/eb3-branch
+=======
+        
+        
+>>>>>>> origin/eb3-branch
         
         var venueName = venue.name
+        self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
         
-    
-       self.chooseBarButton.setTitle(venueName, forState: UIControlState.Normal)
-      
-
+        
         
     }
     
-    
-
     
     /*
     

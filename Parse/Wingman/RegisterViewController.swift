@@ -68,7 +68,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         imageView!.contentMode = .ScaleAspectFill
         
         imageView!.hidden = true
-        let image = UIImage(named: "bar")
+        let image = UIImage(named: "bar_illus")
 
         imageView!.image = image
         navigationItem.titleView = imageView
