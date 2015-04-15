@@ -70,6 +70,7 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
 
       
         joinButton.titleLabel!.adjustsFontSizeToFitWidth = true
+
          joinButton.titleLabel!.minimumScaleFactor = 0.3
         
         userImage.layer.cornerRadius = userImage.frame.size.width/2
