@@ -38,7 +38,6 @@
 		29A075981ABB711E00204989 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A075971ABB711E00204989 /* PickerViewController.swift */; };
 		29E637801AC059BB009B5241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E6377F1AC059BB009B5241 /* Images.xcassets */; };
 		BD080DC61AC0ABBF009FC1F0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */; };
-		BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC21AC0ABBF009FC1F0 /* Data.swift */; };
 		BD080DC81AC0ABBF009FC1F0 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */; };
 		BD080DC91AC0ABBF009FC1F0 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC41AC0ABBF009FC1F0 /* Misc.swift */; };
 		BD080DCA1AC0ABBF009FC1F0 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */; };
@@ -73,8 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		293044EB1AAF569600A793FC /* FourSquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareAPI.swift; sourceTree = "<group>"; };
-		293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubOrBarVenues.swift; sourceTree = "<group>"; };
+		293044EB1AAF569600A793FC /* FourSquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourSquareAPI.swift; path = Wingman/FourSquareAPI.swift; sourceTree = "<group>"; };
+		293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubOrBarVenues.swift; path = Wingman/ClubOrBarVenues.swift; sourceTree = "<group>"; };
 		29775D311AA3D45800A56925 /* Wingman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wingman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29775D351AA3D45800A56925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29775D361AA3D45800A56925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		29A075971ABB711E00204989 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		29E6377F1AC059BB009B5241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		BD080DC21AC0ABBF009FC1F0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BD080DC41AC0ABBF009FC1F0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 		29775D281AA3D45800A56925 = {
 			isa = PBXGroup;
 			children = (
-				29FD51561AB4CA1100A0D7DF /* ViewControllers */,
 				29775D331AA3D45800A56925 /* Wingman */,
 				29775D491AA3D45800A56925 /* WingmanTests */,
 				29775D321AA3D45800A56925 /* Products */,
@@ -190,12 +187,10 @@
 		29775D331AA3D45800A56925 /* Wingman */ = {
 			isa = PBXGroup;
 			children = (
-				29775D361AA3D45800A56925 /* AppDelegate.swift */,
-				293044EB1AAF569600A793FC /* FourSquareAPI.swift */,
-				293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */,
 				29775D3A1AA3D45800A56925 /* Main.storyboard */,
-				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
-				BD5307A01AA9702700D8DBBB /* Images */,
+				BD1A3EF21ADED53000C9E96E /* Model */,
+				BD1A3EF11ADED4BE00C9E96E /* View */,
+				29FD51561AB4CA1100A0D7DF /* Controller */,
 				29775D341AA3D45800A56925 /* Supporting Files */,
 				29775DB11AA4F29000A56925 /* Wingman-Bridging-Header.h */,
 			);
@@ -205,6 +200,9 @@
 		29775D341AA3D45800A56925 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD5307A01AA9702700D8DBBB /* Images */,
+				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
+				29775D361AA3D45800A56925 /* AppDelegate.swift */,
 				2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */,
 				29775D351AA3D45800A56925 /* Info.plist */,
 			);
@@ -252,10 +250,9 @@
 			path = Wingman;
 			sourceTree = "<group>";
 		};
-		29FD51561AB4CA1100A0D7DF /* ViewControllers */ = {
+		29FD51561AB4CA1100A0D7DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
 				BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */,
@@ -265,7 +262,8 @@
 				BD5307A11AAA2A7900D8DBBB /* BrowseDetailViewController.swift */,
 				29A075971ABB711E00204989 /* PickerViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD080DCB1AC0ABD4009FC1F0 /* Animations */ = {
@@ -273,12 +271,30 @@
 			children = (
 				BD080DCD1AC0AD09009FC1F0 /* GradientView.swift */,
 				BD080DC11AC0ABBF009FC1F0 /* BlurView.swift */,
-				BD080DC21AC0ABBF009FC1F0 /* Data.swift */,
 				BD080DC31AC0ABBF009FC1F0 /* DesignableView.swift */,
 				BD080DC41AC0ABBF009FC1F0 /* Misc.swift */,
 				BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */,
 			);
 			name = Animations;
+			sourceTree = "<group>";
+		};
+		BD1A3EF11ADED4BE00C9E96E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
+			);
+			name = View;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		BD1A3EF21ADED53000C9E96E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */,
+				293044EB1AAF569600A793FC /* FourSquareAPI.swift */,
+			);
+			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD5307A01AA9702700D8DBBB /* Images */ = {
@@ -431,7 +447,6 @@
 				BD080DCE1AC0AD09009FC1F0 /* GradientView.swift in Sources */,
 				29775DCF1AA639DB00A56925 /* BrowseTableViewController.swift in Sources */,
 				29775E331AA7F27F00A56925 /* PostViewController.swift in Sources */,
-				BD080DC71AC0ABBF009FC1F0 /* Data.swift in Sources */,
 				29A075981ABB711E00204989 /* PickerViewController.swift in Sources */,
 				BD080DD81AC1EE66009FC1F0 /* RootNavigationController.swift in Sources */,
 				293044EC1AAF569600A793FC /* FourSquareAPI.swift in Sources */,

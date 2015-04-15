@@ -213,7 +213,6 @@
 		29775D281AA3D45800A56925 = {
 			isa = PBXGroup;
 			children = (
-				29FD51561AB4CA1100A0D7DF /* ViewControllers */,
 				29775D331AA3D45800A56925 /* Wingman */,
 				29775D491AA3D45800A56925 /* WingmanTests */,
 				29775D321AA3D45800A56925 /* Products */,
@@ -233,17 +232,16 @@
 		29775D331AA3D45800A56925 /* Wingman */ = {
 			isa = PBXGroup;
 			children = (
+				29775D3A1AA3D45800A56925 /* Main.storyboard */,
+				BD1A3EF31ADED60F00C9E96E /* Model */,
 				BDD10D881AC34F2B00FEA47A /* User.swift */,
 				BDD10D8A1AC34F3300FEA47A /* APIRequest.swift */,
 				BD58C2B21AC49CB9004490E3 /* S3.swift */,
-				29775D361AA3D45800A56925 /* AppDelegate.swift */,
 				293044EB1AAF569600A793FC /* FourSquareAPI.swift */,
 				293044ED1AAF619400A793FC /* ClubOrBarVenues.swift */,
-				29775D3A1AA3D45800A56925 /* Main.storyboard */,
-				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
-				BD5307A01AA9702700D8DBBB /* Images */,
+				BD1A3EF41ADED61400C9E96E /* View */,
+				29FD51561AB4CA1100A0D7DF /* Controller */,
 				29775D341AA3D45800A56925 /* Supporting Files */,
-				29775DB11AA4F29000A56925 /* Wingman-Bridging-Header.h */,
 			);
 			path = Wingman;
 			sourceTree = "<group>";
@@ -251,6 +249,10 @@
 		29775D341AA3D45800A56925 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29775D361AA3D45800A56925 /* AppDelegate.swift */,
+				29775D3F1AA3D45800A56925 /* LaunchScreen.xib */,
+				29775DB11AA4F29000A56925 /* Wingman-Bridging-Header.h */,
+				BD5307A01AA9702700D8DBBB /* Images */,
 				2980CDA91AC063E1005A4A7D /* TipoType - Libertad.otf */,
 				29775D351AA3D45800A56925 /* Info.plist */,
 			);
@@ -298,12 +300,9 @@
 			path = Wingman;
 			sourceTree = "<group>";
 		};
-		29FD51561AB4CA1100A0D7DF /* ViewControllers */ = {
+		29FD51561AB4CA1100A0D7DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD58C2C01AC4A0DD004490E3 /* AFNetworking */,
-				BD58C2B41AC49D06004490E3 /* Amazon S3 */,
-				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
 				29775D381AA3D45800A56925 /* LoginViewController.swift */,
 				29775DCA1AA4FD6E00A56925 /* RegisterViewController.swift */,
 				BD080DD71AC1EE66009FC1F0 /* RootNavigationController.swift */,
@@ -313,7 +312,8 @@
 				29775E321AA7F27F00A56925 /* PostViewController.swift */,
 				29A075971ABB711E00204989 /* PickerViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD080DCB1AC0ABD4009FC1F0 /* Animations */ = {
@@ -327,6 +327,24 @@
 				BD080DC51AC0ABBF009FC1F0 /* SpringAnimation.swift */,
 			);
 			name = Animations;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		BD1A3EF31ADED60F00C9E96E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD58C2C01AC4A0DD004490E3 /* AFNetworking */,
+				BD58C2B41AC49D06004490E3 /* Amazon S3 */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BD1A3EF41ADED61400C9E96E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD080DCB1AC0ABD4009FC1F0 /* Animations */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BD5307A01AA9702700D8DBBB /* Images */ = {
@@ -364,6 +382,7 @@
 				BD58C2BA1AC49D15004490E3 /* AFAmazonS3ResponseSerializer.m */,
 			);
 			name = "Amazon S3";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD58C2C01AC4A0DD004490E3 /* AFNetworking */ = {
@@ -390,6 +409,7 @@
 				BD58C3D01AC4A141004490E3 /* AFURLSessionManager.m */,
 			);
 			name = AFNetworking;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
