@@ -69,8 +69,13 @@ class BrowseDetailViewController: UIViewController, CLLocationManagerDelegate, M
         super.viewDidLoad()
 
       
+        joinButton.titleLabel!.adjustsFontSizeToFitWidth = true
+         joinButton.titleLabel!.minimumScaleFactor = 0.3
+        
+        userImage.layer.cornerRadius = userImage.frame.size.width/2
         
        
+        interestsLabel.layer.cornerRadius = interestsLabel.frame.size.width/20
         fillLabels()
         
         startUpdatingLocation()

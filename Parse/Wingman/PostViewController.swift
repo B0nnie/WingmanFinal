@@ -45,6 +45,10 @@ class PostViewController: UIViewController, didChooseVenueProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        chooseBarButton.titleLabel!.adjustsFontSizeToFitWidth = true
+        chooseBarButton.titleLabel!.minimumScaleFactor = 0.3
         self.tabBarController?.tabBar.hidden = false
         // Do any additional setup after loading the view.
         
